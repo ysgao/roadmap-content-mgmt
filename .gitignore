@@ -12,3 +12,7 @@ Thumbs.db
 .vscode/
 .idea/
 coverage/
+*.db
+*.db-journal
+*.db-shm
+*.db-wal
