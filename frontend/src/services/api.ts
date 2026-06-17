@@ -6,6 +6,7 @@ import type {
   EvidenceInput,
   Horizon,
   TimelineItem,
+  JiraTicket,
   JiraTicketsResponse,
 } from '../types'
 import {
@@ -15,8 +16,20 @@ import {
 } from './sheets'
 
 const BASE = import.meta.env.BASE_URL
-// Apps Script Web App URL for Jira proxy (set VITE_JIRA_PROXY_URL in env)
-const JIRA_PROXY_URL = import.meta.env.VITE_JIRA_PROXY_URL ?? ''
+// Jira ticket cache (populated by GitHub Actions, served as static JSON)
+let _jiraCache: { lastUpdated: string; tickets: Record<string, JiraTicket> } | null = null
+
+async function getJiraCache() {
+  if (_jiraCache) return _jiraCache
+  try {
+    const res = await fetch(`${BASE}data/jira-tickets.json`)
+    if (!res.ok) return { lastUpdated: '', tickets: {} as Record<string, JiraTicket> }
+    _jiraCache = await res.json() as { lastUpdated: string; tickets: Record<string, JiraTicket> }
+  } catch {
+    _jiraCache = { lastUpdated: '', tickets: {} }
+  }
+  return _jiraCache
+}
 
 const HORIZON_ORDER: Horizon[] = ['Now', 'Next', 'Later', 'UnderAssessment', 'InMaintenance']
 
@@ -158,9 +171,11 @@ export function isJiraTicketActive(status: string): boolean {
 
 export async function getJiraTickets(keys: string[]): Promise<JiraTicketsResponse> {
   if (!keys.length) return { tickets: [] }
-  if (!JIRA_PROXY_URL) return { tickets: keys.map(key => ({ key, summary: '', status: '', assignee: null, priority: null, url: '', error: 'Jira proxy not configured' })) }
-  const params = keys.join(',')
-  const res = await fetch(`${JIRA_PROXY_URL}?keys=${encodeURIComponent(params)}`)
-  if (!res.ok) throw new Error(`HTTP ${res.status}`)
-  return res.json() as Promise<JiraTicketsResponse>
+  const cache = await getJiraCache()
+  return {
+    tickets: keys.map(key => cache.tickets[key] ?? {
+      key, summary: '', status: '', assignee: null, priority: null,
+      url: '', error: 'Not in cache',
+    }),
+  }
 }

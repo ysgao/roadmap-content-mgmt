@@ -1,9 +1,8 @@
 import { useEffect, useState, useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import type { RoadmapItem, ProvenanceEvent, MemberPriority, Horizon, HorizonsResponse } from '../types'
-import { getRoadmapItems, getProvenanceEvents, getMemberPriorities, getJiraTickets, isJiraTicketActive } from '../services/api'
+import { getRoadmapItems, getProvenanceEvents, getMemberPriorities, isJiraTicketActive } from '../services/api'
 import { useFilterStore } from '../store/filterStore'
-import { useAuth } from '../services/auth'
 import FilterBar from '../components/dashboard/FilterBar'
 import HorizonGroup from '../components/dashboard/HorizonGroup'
 import MemberPrioritiesList from '../components/priorities/MemberPrioritiesList'
@@ -13,15 +12,13 @@ const HORIZON_ORDER: Horizon[] = ['Now', 'Next', 'Later', 'UnderAssessment', 'In
 
 export default function DashboardPage() {
   const { origin, siStatus, activityType, hasActiveJira } = useFilterStore()
-  const { isAuthenticated } = useAuth()
 
   const [allData, setAllData] = useState<HorizonsResponse | null>(null)
   const [provenanceEvents, setProvenanceEvents] = useState<ProvenanceEvent[]>([])
   const [priorities, setPriorities] = useState<MemberPriority[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
-  const [jiraStatuses, setJiraStatuses] = useState<Record<string, string>>({})
-  const [jiraLoading, setJiraLoading] = useState(false)
+  const [jiraStatuses] = useState<Record<string, string>>({})
 
   useEffect(() => {
     Promise.all([
@@ -41,26 +38,6 @@ export default function DashboardPage() {
       })
   }, [])
 
-  // Batch-fetch Jira statuses when the Jira filter is active and user is authenticated
-  useEffect(() => {
-    if (!hasActiveJira || !isAuthenticated || !allData) return
-    const allItems: RoadmapItem[] = HORIZON_ORDER.flatMap(h => allData.horizons[h] ?? [])
-    const allKeys = [...new Set(allItems.flatMap(item => item.jiraTickets))]
-    if (!allKeys.length) return
-
-    setJiraLoading(true)
-    getJiraTickets(allKeys)
-      .then(res => {
-        const map: Record<string, string> = {}
-        for (const t of res.tickets) {
-          map[t.key] = t.status
-        }
-        setJiraStatuses(map)
-      })
-      .catch(() => {})
-      .finally(() => setJiraLoading(false))
-  }, [hasActiveJira, isAuthenticated, allData])
-
   const roadmapData = useMemo<HorizonsResponse | null>(() => {
     if (!allData) return null
     const allItems: RoadmapItem[] = HORIZON_ORDER.flatMap(h => allData.horizons[h] ?? [])
@@ -71,14 +48,10 @@ export default function DashboardPage() {
       return true
     })
 
-    if (hasActiveJira && isAuthenticated) {
+    if (hasActiveJira) {
       filtered = filtered.filter(item =>
         item.jiraTickets.some(key => isJiraTicketActive(jiraStatuses[key] ?? ''))
       )
-    }
-    if (hasActiveJira && !isAuthenticated) {
-      // Show only items with linked tickets — user will see sign-in prompts in cards
-      filtered = filtered.filter(item => item.jiraTickets.length > 0)
     }
 
     const horizons = HORIZON_ORDER.reduce((acc, h) => {
@@ -90,7 +63,7 @@ export default function DashboardPage() {
       return acc
     }, {} as Record<Horizon, number>)
     return { horizons, counts, total: filtered.length }
-  }, [allData, origin, siStatus, activityType, hasActiveJira, isAuthenticated, jiraStatuses])
+  }, [allData, origin, siStatus, activityType, hasActiveJira, jiraStatuses])
 
   return (
     <div style={{ minHeight: '100vh', background: '#f5f7fa' }}>
@@ -155,11 +128,11 @@ export default function DashboardPage() {
       </header>
 
       <main style={{ maxWidth: '1200px', margin: '0 auto', padding: '24px' }}>
-        <FilterBar provenanceEvents={provenanceEvents} isAuthenticated={isAuthenticated} />
+        <FilterBar provenanceEvents={provenanceEvents} />
 
-        {(loading || jiraLoading) && (
+        {loading && (
           <div style={{ padding: '48px', textAlign: 'center', color: '#718096', fontSize: '0.95rem' }}>
-            {loading ? 'Loading roadmap data...' : 'Loading Jira ticket statuses...'}
+            Loading roadmap data...
           </div>
         )}
 
@@ -177,7 +150,6 @@ export default function DashboardPage() {
                 horizon={horizon}
                 items={roadmapData.horizons[horizon] ?? []}
                 count={roadmapData.counts[horizon] ?? 0}
-                isAuthenticated={isAuthenticated}
               />
             ))}
             <MemberPrioritiesList priorities={priorities} />

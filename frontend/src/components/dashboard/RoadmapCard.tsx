@@ -9,7 +9,6 @@ import JiraTickets from './JiraTickets'
 
 interface Props {
   item: RoadmapItem
-  isAuthenticated: boolean
 }
 
 function FieldRow({ label, value }: { label: string; value: React.ReactNode }) {
@@ -31,7 +30,7 @@ const BAR_STYLE_COLORS: Record<string, string> = {
   Ongoing: '#4A90D9',
 }
 
-export default function RoadmapCard({ item, isAuthenticated }: Props) {
+export default function RoadmapCard({ item }: Props) {
   const [expanded, setExpanded] = useState(false)
   const borderColor = ACTIVITY_COLORS[item.activityType]
 
@@ -159,7 +158,7 @@ export default function RoadmapCard({ item, isAuthenticated }: Props) {
           )}
 
           {item.jiraTickets.length > 0 && (
-            <JiraTickets jiraTickets={item.jiraTickets} isAuthenticated={isAuthenticated} />
+            <JiraTickets jiraTickets={item.jiraTickets} />
           )}
         </div>
       )}

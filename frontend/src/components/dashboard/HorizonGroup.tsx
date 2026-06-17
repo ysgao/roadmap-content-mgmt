@@ -30,10 +30,9 @@ interface Props {
   horizon: Horizon
   items: RoadmapItem[]
   count: number
-  isAuthenticated: boolean
 }
 
-export default function HorizonGroup({ horizon, items, count, isAuthenticated }: Props) {
+export default function HorizonGroup({ horizon, items, count }: Props) {
   const [collapsed, setCollapsed] = useState(false)
   const color = HORIZON_COLORS[horizon]
   const label = HORIZON_LABELS[horizon]
@@ -93,7 +92,7 @@ export default function HorizonGroup({ horizon, items, count, isAuthenticated }:
               No items in this horizon match the current filters.
             </p>
           ) : (
-            items.map(item => <RoadmapCard key={item.id} item={item} isAuthenticated={isAuthenticated} />)
+            items.map(item => <RoadmapCard key={item.id} item={item} />)
           )}
         </div>
       )}

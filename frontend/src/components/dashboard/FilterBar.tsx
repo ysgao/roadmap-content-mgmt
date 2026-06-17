@@ -1,6 +1,5 @@
 import type { ProvenanceEvent } from '../../types'
 import { useFilterStore } from '../../store/filterStore'
-import JiraSignInPrompt from './JiraSignInPrompt'
 
 const SI_STATUS_OPTIONS = ['Active', 'Planned', 'Paused', 'Deferred']
 const ACTIVITY_TYPE_OPTIONS = [
@@ -14,7 +13,6 @@ const ACTIVITY_TYPE_OPTIONS = [
 
 interface Props {
   provenanceEvents: ProvenanceEvent[]
-  isAuthenticated: boolean
 }
 
 const selectStyle: React.CSSProperties = {
@@ -28,7 +26,7 @@ const selectStyle: React.CSSProperties = {
   minWidth: '180px',
 }
 
-export default function FilterBar({ provenanceEvents, isAuthenticated }: Props) {
+export default function FilterBar({ provenanceEvents }: Props) {
   const { origin, siStatus, activityType, hasActiveJira, setOrigin, setSiStatus, setActivityType, setHasActiveJira, reset } = useFilterStore()
 
   const hasFilters = origin !== '' || siStatus !== '' || activityType !== '' || hasActiveJira
@@ -125,9 +123,6 @@ export default function FilterBar({ provenanceEvents, isAuthenticated }: Props) 
         )}
       </div>
 
-      {hasActiveJira && !isAuthenticated && (
-        <JiraSignInPrompt />
-      )}
     </div>
   )
 }
