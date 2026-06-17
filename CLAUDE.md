@@ -3,14 +3,14 @@
 ## Active Feature
 
 <!-- SPECKIT START -->
-**Feature**: Roadmap Content Management Application
-**Plan**: [specs/001-roadmap-content-mgmt/plan.md](specs/001-roadmap-content-mgmt/plan.md)
-**Spec**: [specs/001-roadmap-content-mgmt/spec.md](specs/001-roadmap-content-mgmt/spec.md)
-**Data Model**: [specs/001-roadmap-content-mgmt/data-model.md](specs/001-roadmap-content-mgmt/data-model.md)
-**API Contracts**: [specs/001-roadmap-content-mgmt/contracts/api.md](specs/001-roadmap-content-mgmt/contracts/api.md)
-**Quickstart**: [specs/001-roadmap-content-mgmt/quickstart.md](specs/001-roadmap-content-mgmt/quickstart.md)
+**Feature**: Jira Ticket Linking + Whole-App Authentication
+**Plan**: [specs/003-jira-ticket-linking/plan.md](specs/003-jira-ticket-linking/plan.md)
+**Spec**: [specs/003-jira-ticket-linking/spec.md](specs/003-jira-ticket-linking/spec.md)
+**Data Model**: [specs/003-jira-ticket-linking/data-model.md](specs/003-jira-ticket-linking/data-model.md)
+**API Contracts**: [specs/003-jira-ticket-linking/contracts/api.md](specs/003-jira-ticket-linking/contracts/api.md)
+**Quickstart**: [specs/003-jira-ticket-linking/quickstart.md](specs/003-jira-ticket-linking/quickstart.md)
 <!-- SPECKIT END -->
 
 ## Project Summary
 
-Web application that replicates and extends the SNOMED CT Content Development Roadmap dashboard. Public read-only dashboard + authenticated admin interface. React SPA frontend, Express REST API backend, PostgreSQL storage.
+SNOMED International Roadmap CMS — Keycloak-authenticated web application showing SNOMED CT content development roadmap items linked to live Jira tickets. React SPA frontend served by Express backend. Data sourced from Google Sheets (GViz endpoint). Jira data proxied server-side. Deployed on Render.
