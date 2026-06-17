@@ -15,7 +15,8 @@ import {
 } from './sheets'
 
 const BASE = import.meta.env.BASE_URL
-const JIRA_API_BASE = import.meta.env.VITE_API_BASE_URL ?? ''
+// Apps Script Web App URL for Jira proxy (set VITE_JIRA_PROXY_URL in env)
+const JIRA_PROXY_URL = import.meta.env.VITE_JIRA_PROXY_URL ?? ''
 
 const HORIZON_ORDER: Horizon[] = ['Now', 'Next', 'Later', 'UnderAssessment', 'InMaintenance']
 
@@ -157,11 +158,9 @@ export function isJiraTicketActive(status: string): boolean {
 
 export async function getJiraTickets(keys: string[]): Promise<JiraTicketsResponse> {
   if (!keys.length) return { tickets: [] }
+  if (!JIRA_PROXY_URL) return { tickets: keys.map(key => ({ key, summary: '', status: '', assignee: null, priority: null, url: '', error: 'Jira proxy not configured' })) }
   const params = keys.join(',')
-  const res = await fetch(
-    `${JIRA_API_BASE}/api/v1/jira/tickets?keys=${encodeURIComponent(params)}`,
-    { credentials: 'include' },
-  )
+  const res = await fetch(`${JIRA_PROXY_URL}?keys=${encodeURIComponent(params)}`)
   if (!res.ok) throw new Error(`HTTP ${res.status}`)
   return res.json() as Promise<JiraTicketsResponse>
 }
