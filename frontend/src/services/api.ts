@@ -6,6 +6,7 @@ import type {
   EvidenceInput,
   Horizon,
   TimelineItem,
+  JiraTicketsResponse,
 } from '../types'
 import {
   isSheetsConfigured,
@@ -14,6 +15,7 @@ import {
 } from './sheets'
 
 const BASE = import.meta.env.BASE_URL
+const JIRA_API_BASE = import.meta.env.VITE_API_BASE_URL ?? ''
 
 const HORIZON_ORDER: Horizon[] = ['Now', 'Next', 'Later', 'UnderAssessment', 'InMaintenance']
 
@@ -143,4 +145,23 @@ export function createEvidence(_d: Partial<EvidenceInput>): Promise<EvidenceInpu
 }
 export function updateEvidence(_id: string, _d: Partial<EvidenceInput>): Promise<EvidenceInput> {
   return Promise.reject(new Error('Read-only deployment'))
+}
+
+export const JIRA_INACTIVE_STATUSES = new Set([
+  'Done', 'Closed', 'Resolved', "Won't Do", 'Duplicate', 'Cancelled', 'Rejected',
+])
+
+export function isJiraTicketActive(status: string): boolean {
+  return !JIRA_INACTIVE_STATUSES.has(status)
+}
+
+export async function getJiraTickets(keys: string[]): Promise<JiraTicketsResponse> {
+  if (!keys.length) return { tickets: [] }
+  const params = keys.join(',')
+  const res = await fetch(
+    `${JIRA_API_BASE}/api/v1/jira/tickets?keys=${encodeURIComponent(params)}`,
+    { credentials: 'include' },
+  )
+  if (!res.ok) throw new Error(`HTTP ${res.status}`)
+  return res.json() as Promise<JiraTicketsResponse>
 }

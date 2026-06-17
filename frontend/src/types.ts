@@ -38,6 +38,7 @@ export interface RoadmapItem {
   displayOrder: number
   provenanceChips: ProvenanceChip[]
   deliveryPeriods: DeliveryPeriod[]
+  jiraTickets: string[]
 }
 
 export interface HorizonsResponse {
@@ -92,4 +93,18 @@ export interface User {
   email: string
   name: string
   roles: string[]
+}
+
+export interface JiraTicket {
+  key: string
+  summary: string
+  status: string
+  assignee: string | null
+  priority: string | null
+  url: string
+  error?: string
+}
+
+export interface JiraTicketsResponse {
+  tickets: JiraTicket[]
 }

@@ -1,0 +1,29 @@
+services:
+  - type: web
+    name: roadmap-content-api
+    env: node
+    buildCommand: cd backend && npm install && npm run build
+    startCommand: node backend/dist/index.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MOCK_AUTH
+        value: false
+      - key: FRONTEND_URL
+        value: https://ysgao.github.io
+      - key: SESSION_SECRET
+        sync: false
+      - key: OIDC_CLIENT_ID
+        sync: false
+      - key: OIDC_CLIENT_SECRET
+        sync: false
+      - key: OIDC_ISSUER_URL
+        sync: false
+      - key: OIDC_CALLBACK_URL
+        sync: false
+      - key: JIRA_BASE_URL
+        sync: false
+      - key: JIRA_EMAIL
+        sync: false
+      - key: JIRA_API_TOKEN
+        sync: false

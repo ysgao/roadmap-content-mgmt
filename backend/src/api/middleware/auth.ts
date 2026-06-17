@@ -43,6 +43,19 @@ export function requireAuth(req: Request, res: Response, next: NextFunction): vo
   next();
 }
 
+export function requireAuthenticated(req: Request, res: Response, next: NextFunction): void {
+  const isMock = process.env.MOCK_AUTH === 'true' && process.env.NODE_ENV !== 'production';
+  if (isMock) {
+    req.user = MOCK_USER;
+    return next();
+  }
+  if (!req.isAuthenticated() || !req.user) {
+    res.status(401).json({ error: { message: 'Unauthorized', status: 401 } });
+    return;
+  }
+  next();
+}
+
 passport.serializeUser((user, done) => {
   done(null, user);
 });

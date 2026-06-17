@@ -21,7 +21,8 @@
     "deliveryPeriods": [
       { "periodLabel": "H1 2026", "periodYear": 2026, "periodHalf": "H1", "barStyle": "Active" },
       { "periodLabel": "H2 2026", "periodYear": 2026, "periodHalf": "H2", "barStyle": "Active" }
-    ]
+    ],
+    "jiraTickets": []
   },
   {
     "id": "2",
@@ -44,7 +45,8 @@
     "deliveryPeriods": [
       { "periodLabel": "H1 2026", "periodYear": 2026, "periodHalf": "H1", "barStyle": "Active" },
       { "periodLabel": "H2 2026", "periodYear": 2026, "periodHalf": "H2", "barStyle": "Planned" }
-    ]
+    ],
+    "jiraTickets": []
   },
   {
     "id": "3",
@@ -67,7 +69,8 @@
     ],
     "deliveryPeriods": [
       { "periodLabel": "H2 2026", "periodYear": 2026, "periodHalf": "H2", "barStyle": "Planned" }
-    ]
+    ],
+    "jiraTickets": []
   },
   {
     "id": "4",
@@ -89,7 +92,8 @@
     ],
     "deliveryPeriods": [
       { "periodLabel": "H1 2027", "periodYear": 2027, "periodHalf": "H1", "barStyle": "Planned" }
-    ]
+    ],
+    "jiraTickets": []
   },
   {
     "id": "5",
@@ -107,6 +111,7 @@
     "implementationNotes": null,
     "displayOrder": 1,
     "provenanceChips": [],
-    "deliveryPeriods": []
+    "deliveryPeriods": [],
+    "jiraTickets": []
   }
 ]

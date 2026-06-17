@@ -60,7 +60,7 @@ authRouter.get('/me', (req: Request, res: Response) => {
       res.json({ user: MOCK_USER });
       return;
     }
-    res.status(401).json({ error: { message: 'Not authenticated', status: 401 } });
+    res.status(200).json({ user: null });
     return;
   }
   res.json({ user: req.user });

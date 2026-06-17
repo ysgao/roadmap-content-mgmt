@@ -4,6 +4,7 @@ import { timelineRouter } from './timeline';
 import { memberPrioritiesRouter } from './memberPriorities';
 import { provenanceEventsRouter } from './provenanceEvents';
 import { evidenceRouter } from './evidence';
+import { jiraRouter } from './jira';
 
 export const apiRouter = Router();
 
@@ -16,3 +17,4 @@ apiRouter.use('/timeline', timelineRouter);
 apiRouter.use('/member-priorities', memberPrioritiesRouter);
 apiRouter.use('/provenance-events', provenanceEventsRouter);
 apiRouter.use('/evidence', evidenceRouter);
+apiRouter.use('/jira', jiraRouter);
