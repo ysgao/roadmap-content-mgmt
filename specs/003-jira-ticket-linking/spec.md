@@ -103,7 +103,7 @@ A user wants to see which roadmap items have active Jira work in progress. They 
 - **FR-008**: The linked tickets section MUST only appear on cards that have at least one linked ticket; unauthenticated cards with tickets show the sign-in prompt; cards with no tickets show nothing
 - **FR-009**: If a Jira ticket cannot be fetched (invalid key, access error, timeout), the application MUST display a graceful fallback message for that ticket without breaking the rest of the card
 - **FR-010**: Ticket data MUST be fetched live on card expansion, not pre-fetched at page load
-- **FR-011**: The dashboard MUST support filtering to show only roadmap items that have linked Jira tickets (presence filter, not status filter in v1)
+- **FR-011**: The dashboard MUST support filtering to show only roadmap items that have at least one linked Jira ticket in an active state (Open, In Progress, or equivalent non-Done status); the filter requires authentication — unauthenticated users who enable it MUST be prompted to sign in; Jira ticket statuses are mapped to active/inactive to determine visibility
 - **FR-012**: A content administrator MUST be able to link tickets to a roadmap item by editing the `jiraTickets` column in the Google Sheet only
 - **FR-013**: Clicking a ticket key or link MUST open the Jira ticket in a new browser tab
 - **FR-014**: The linked tickets section MUST display correctly on all roadmap cards regardless of horizon
@@ -124,7 +124,7 @@ A user wants to see which roadmap items have active Jira work in progress. They 
 - **SC-004**: 100% of roadmap items with tickets in the Google Sheet show the sign-in prompt (unauthenticated) or live ticket data (authenticated)
 - **SC-005**: A content administrator can link a new Jira ticket to a roadmap item in under 1 minute by editing the Google Sheet, with no application changes required
 - **SC-006**: When Jira is unavailable, 100% of roadmap cards still load and display normally — Jira unavailability does not affect the public dashboard
-- **SC-007**: Filtering by "Has linked Jira tickets" shows only items with at least one ticket key in the sheet, with zero false positives
+- **SC-007**: Filtering by "Has active Jira tickets" shows only roadmap items with at least one ticket in an Open or In Progress state, with zero false positives and zero false negatives relative to live Jira ticket statuses
 
 ## Assumptions
 

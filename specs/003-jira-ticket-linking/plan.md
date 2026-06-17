@@ -1,4 +1,4 @@
-# Implementation Plan: Jira Ticket Linking + Whole-App Authentication
+# Implementation Plan: Jira Ticket Linking + Optional Authentication
 
 **Branch**: `003-jira-ticket-linking` | **Date**: 2026-06-17 | **Spec**: [spec.md](./spec.md)
 
@@ -63,7 +63,7 @@ specs/003-jira-ticket-linking/
 ```text
 backend/src/
 ├── api/
-│   ├── middleware/auth.ts        # Extend: protect ALL routes (not just writes)
+│   ├── middleware/auth.ts        # Extend: add auth guard to Jira route only (public routes unchanged)
 │   └── routes/
 │       ├── index.ts              # Add /jira router mount
 │       └── jira.ts               # NEW: Jira proxy route handler
@@ -77,7 +77,7 @@ frontend/src/
 ├── services/
 │   ├── api.ts                    # Extend: add getJiraTickets()
 │   └── auth.ts                   # Extend: real session check, login redirect
-├── store/filterStore.ts          # Extend: add hasActiveJira boolean
+├── store/filterStore.ts          # Extend: add hasActiveJira boolean (status-based, requires auth)
 └── types.ts                      # Extend: JiraTicket type, jiraTickets on RoadmapItem
 
 render.yaml                       # NEW: Render deployment config
@@ -95,11 +95,11 @@ See [research.md](./research.md) for full decision rationale.
 
 | # | Area | Decision |
 |---|------|----------|
-| 1 | Auth architecture | Activate existing Passport.js OIDC — apply to ALL routes |
+| 1 | Auth architecture | Passport.js OIDC — applied to Jira proxy route only; public routes unchanged |
 | 2 | Jira access | Server-side proxy with service account API token |
 | 3 | Deployment | Render (Node.js native, no Docker) |
 | 4 | Sheet column | `jiraTickets` as column 17, pipe-separated keys |
-| 5 | Jira filter state | Extend Zustand filterStore with `hasActiveJira` flag |
+| 5 | Jira filter state | Extend Zustand filterStore with `hasActiveJira` flag — status-based filter requiring auth |
 
 ---
 

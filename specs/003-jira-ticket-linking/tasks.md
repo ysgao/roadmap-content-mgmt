@@ -101,19 +101,20 @@
 
 ---
 
-## Phase 6: User Story 3 — Filter by Linked Jira Tickets (Priority: P2)
+## Phase 6: User Story 3 — Filter by Active Jira Ticket Status (Priority: P2)
 
-**Goal**: User enables "Has linked Jira tickets" filter. Dashboard shows only roadmap items that have at least one ticket key in their `jiraTickets` field.
+**Goal**: Authenticated user enables "Has active Jira tickets" filter. Dashboard fetches live statuses for all items with linked tickets and shows only items with at least one ticket in an Open or In Progress state. Unauthenticated users who attempt to enable the filter see a sign-in prompt.
 
-**Independent Test**: Enable filter → only items with non-empty `jiraTickets` array visible; horizon counts update. Disable filter → all items visible.
+**Independent Test**: Sign in. Enable filter → DashboardPage fetches statuses for all items with `jiraTickets.length > 0` → only items with ≥1 Open/In Progress ticket shown; counts update. Disable filter → all items visible. As unauthenticated user, enabling filter → sign-in prompt shown.
 
 ### Implementation for User Story 3
 
-- [ ] T024 [US3] Add `hasLinkedJira: boolean` and `setHasLinkedJira: (v: boolean) => void` to Zustand store in `frontend/src/store/filterStore.ts`
-- [ ] T025 [P] [US3] Add "Has Jira tickets" toggle to `FilterBar` component in `frontend/src/components/dashboard/FilterBar.tsx`
-- [ ] T026 [US3] Update `DashboardPage` client-side filter logic to exclude items with empty `jiraTickets` array when `hasLinkedJira` is true in `frontend/src/pages/DashboardPage.tsx`
+- [ ] T024 [US3] Add `hasActiveJira: boolean`, `setHasActiveJira: (v: boolean) => void`, and `jiraStatusCache: Record<string, string>` (key → status), `setJiraStatusCache` to Zustand store in `frontend/src/store/filterStore.ts`
+- [ ] T025 [P] [US3] Add "Has active Jira tickets" toggle to `FilterBar` in `frontend/src/components/dashboard/FilterBar.tsx`: if `hasActiveJira` enabled and user not authenticated → render `JiraSignInPrompt` inline in FilterBar; if authenticated → show toggle active state
+- [ ] T026 [US3] In `DashboardPage`, when `hasActiveJira` is enabled AND authenticated: call `getJiraTickets(allLinkedKeys)` to batch-fetch statuses for all items with tickets, store in `jiraStatusCache`, then filter items client-side to keep only those with ≥1 ticket whose status is not `Done`, `Closed`, `Resolved`, or `Won't Do` in `frontend/src/pages/DashboardPage.tsx`
+- [ ] T026b [US3] Define Jira status → active/inactive mapping constant: active statuses = `["Open","In Progress","Reopened","To Do","In Review"]`; inactive = `["Done","Closed","Resolved","Won't Do","Duplicate"]`; unknown statuses default to active in `frontend/src/services/api.ts`
 
-**Checkpoint**: Filter toggle shows/hides items correctly based on `jiraTickets` presence. Counts per horizon update. Reset clears filter.
+**Checkpoint**: Authenticated filter fetch → only items with live active tickets visible. Unauthenticated filter attempt → sign-in prompt. Reset clears filter and status cache.
 
 ---
 
@@ -121,7 +122,7 @@
 
 **Purpose**: Deploy the Jira proxy backend to Render so the GitHub Pages SPA can call it in production.
 
-- [ ] T027 Create `render.yaml` at repo root defining a Node.js web service: `buildCommand: "cd frontend && npm install && npm run build && cd ../backend && npm install && npm run build"`, `startCommand: "node backend/dist/index.js"`, env vars: `NODE_ENV=production`, `FRONTEND_URL=https://ysgao.github.io`, `MOCK_AUTH=false`
+- [ ] T027 Create `render.yaml` at repo root defining a Node.js web service: `buildCommand: "cd backend && npm install && npm run build"`, `startCommand: "node backend/dist/index.js"`, env vars: `NODE_ENV=production`, `FRONTEND_URL=https://ysgao.github.io`, `MOCK_AUTH=false` — frontend is NOT built on Render (GitHub Pages serves the SPA)
 - [ ] T028 Update `backend/src/index.ts` production static serving to handle split deployment: in `NODE_ENV=production`, if `frontend/dist` does not exist (Render-only backend), skip static serving — backend serves only API routes
 - [ ] T029 [P] Update `frontend/src/services/api.ts` to use `VITE_API_BASE_URL` env var for the Jira proxy base URL (defaults to empty string for dev proxy): `const JIRA_API_BASE = import.meta.env.VITE_API_BASE_URL ?? ''`
 - [ ] T030 [P] Add `VITE_API_BASE_URL` to `frontend/.env.example` and `deploy.yml` GitHub Actions env section (value: Render backend URL)
@@ -136,7 +137,7 @@
 - [ ] T032 [P] Add Jira ticket count badge to `RoadmapCard` collapsed header (show count of linked tickets) in `frontend/src/components/dashboard/RoadmapCard.tsx`
 - [ ] T033 [P] Add rate-limit protection to `GET /api/v1/jira/tickets` (max 30 req/min per session) in `backend/src/api/middleware/rateLimiter.ts`
 - [ ] T034 [P] Handle Jira unavailability gracefully: if `JIRA_BASE_URL` not configured, `jiraService.ts` returns `{key, error: "Jira not configured"}` for all keys
-- [ ] T035 Commit all changes and push to `main` — triggers GitHub Actions redeploy of GitHub Pages frontend; manually trigger Render redeploy of backend
+- [ ] T035 Push `003-jira-ticket-linking` branch and open PR to `main` via `gh pr create`; after merge, GitHub Actions redeploys GitHub Pages frontend; manually trigger Render redeploy of backend
 
 ---
 
@@ -149,7 +150,7 @@
 - **Phase 3 (US0 Auth)**: Depends on Phase 2
 - **Phase 4 (US1 View Tickets)**: Depends on Phase 2 + Phase 3 (`JiraSignInPrompt` needed)
 - **Phase 5 (US2 Sheet Linking)**: Depends on Phase 1 only — independent of auth
-- **Phase 6 (US3 Filter)**: Depends on Phase 1; independent of auth/Jira fetch
+- **Phase 6 (US3 Filter)**: Depends on Phase 2 (needs `getJiraTickets()` for status fetch) and Phase 3 (needs `JiraSignInPrompt` for unauthenticated filter prompt)
 - **Phase 7 (Deployment)**: Depends on Phases 3–4 complete
 - **Phase 8 (Polish)**: Depends on all user story phases complete
 
@@ -158,7 +159,7 @@
 - **US0**: After Foundational — auth flow
 - **US1**: After Foundational + US0 (needs `JiraSignInPrompt`)
 - **US2**: After Phase 1 only — sheet column + parser
-- **US3**: After Phase 1 only — filter is client-side, no auth needed
+- **US3**: After Phase 2 + Phase 3 — status filter requires auth (Jira proxy) and JiraSignInPrompt
 
 ### Within Each Story
 
