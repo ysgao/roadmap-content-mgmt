@@ -16,36 +16,43 @@ import type {
 } from '../types'
 
 const SHEET_ID = import.meta.env.VITE_GOOGLE_SHEETS_ID as string | undefined
-const API_KEY = import.meta.env.VITE_GOOGLE_SHEETS_API_KEY as string | undefined
 
 export function isSheetsConfigured(): boolean {
-  return Boolean(SHEET_ID && API_KEY)
+  return Boolean(SHEET_ID)
 }
 
 async function fetchRange(tab: string): Promise<Record<string, string>[]> {
   const url =
-    `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${encodeURIComponent(tab)}` +
-    `?key=${API_KEY}`
+    `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq` +
+    `?tqx=out:json&sheet=${encodeURIComponent(tab)}`
 
   const res = await fetch(url)
-  if (!res.ok) {
-    const body = await res.text().catch(() => '')
-    throw new Error(`Google Sheets API error ${res.status} on tab "${tab}": ${body}`)
+  if (!res.ok) throw new Error(`Sheets fetch error ${res.status} on tab "${tab}"`)
+
+  // GViz returns: /*O_o*/\ngoogle.visualization.Query.setResponse({...});
+  const text = await res.text()
+  const jsonStr = text.replace(/^[^{]*/, '').replace(/\);?\s*$/, '')
+  const data = JSON.parse(jsonStr) as {
+    status: string
+    table?: {
+      cols: Array<{ label?: string; id: string }>
+      rows: Array<{ c: Array<{ v: unknown } | null> | null }>
+    }
   }
 
-  const data = (await res.json()) as { values?: string[][] }
-  const rows = data.values ?? []
-  if (rows.length < 2) return []
+  if (data.status !== 'ok' || !data.table) return []
 
-  const headers = rows[0].map(h => h.trim())
-  return rows.slice(1)
-    .filter(row => row.some(cell => cell.trim() !== ''))
-    .map(row =>
-      headers.reduce<Record<string, string>>((obj, header, i) => {
-        obj[header] = (row[i] ?? '').trim()
+  const headers = data.table.cols.map(c => (c.label || c.id).trim())
+  return data.table.rows
+    .map(row => {
+      const cells = row.c ?? []
+      return headers.reduce<Record<string, string>>((obj, header, i) => {
+        const cell = cells[i]
+        obj[header] = cell && cell.v != null ? String(cell.v).trim() : ''
         return obj
       }, {})
-    )
+    })
+    .filter(row => Object.values(row).some(v => v !== ''))
 }
 
 function str(val: string | undefined): string | null {
