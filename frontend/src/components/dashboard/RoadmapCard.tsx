@@ -5,6 +5,7 @@ import ImpactBadge from '../shared/ImpactBadge'
 import ActivityTag from '../shared/ActivityTag'
 import ProvenanceChip from '../shared/ProvenanceChip'
 import { ACTIVITY_COLORS } from '../shared/ActivityTag'
+import JiraTickets from './JiraTickets'
 
 interface Props {
   item: RoadmapItem
@@ -82,6 +83,21 @@ export default function RoadmapCard({ item }: Props) {
             {item.provenanceChips.map(chip => (
               <ProvenanceChip key={chip.shortCode} chip={chip} />
             ))}
+            {item.jiraTickets.length > 0 && (
+              <span style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                padding: '2px 8px',
+                borderRadius: '10px',
+                background: '#ebf4ff',
+                border: '1px solid #bee3f8',
+                fontSize: '0.75rem',
+                fontWeight: 600,
+                color: '#2b6cb0',
+              }}>
+                {item.jiraTickets.length} Jira
+              </span>
+            )}
           </div>
         </div>
       </button>
@@ -139,6 +155,10 @@ export default function RoadmapCard({ item }: Props) {
                 ))}
               </div>
             </div>
+          )}
+
+          {item.jiraTickets.length > 0 && (
+            <JiraTickets jiraTickets={item.jiraTickets} />
           )}
         </div>
       )}

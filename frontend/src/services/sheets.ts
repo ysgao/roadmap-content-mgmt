@@ -123,6 +123,7 @@ export async function fetchRoadmapItems(
     displayOrder: r['displayOrder'] ? parseInt(r['displayOrder'], 10) : i,
     provenanceChips: parseProvenanceChips(r['provenanceChips'] ?? '', eventMap),
     deliveryPeriods: parseDeliveryPeriods(r['deliveryPeriods'] ?? ''),
+    jiraTickets: (r['jiraTickets'] ?? '').split('|').map((s: string) => s.trim()).filter(Boolean),
   })).filter(item => item.title !== '')
 }
 

@@ -36,3 +36,12 @@ function setupRoadmapSheet() {
 
   SpreadsheetApp.getUi().alert("Done. 3 tabs ready.");
 }
+
+function addJiraTicketsColumn() {
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var ri = ss.getSheetByName("RoadmapItems");
+  if (!ri) { SpreadsheetApp.getUi().alert("RoadmapItems tab not found"); return; }
+  ri.getRange(1, 17).setValue("jiraTickets");
+  ri.getRange(1, 17).setFontWeight("bold").setBackground("#1a3a5c").setFontColor("#ffffff");
+  SpreadsheetApp.getUi().alert("jiraTickets column added at column 17");
+}

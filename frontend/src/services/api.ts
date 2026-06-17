@@ -6,6 +6,8 @@ import type {
   EvidenceInput,
   Horizon,
   TimelineItem,
+  JiraTicket,
+  JiraTicketsResponse,
 } from '../types'
 import {
   isSheetsConfigured,
@@ -14,6 +16,20 @@ import {
 } from './sheets'
 
 const BASE = import.meta.env.BASE_URL
+// Jira ticket cache (populated by GitHub Actions, served as static JSON)
+let _jiraCache: { lastUpdated: string; tickets: Record<string, JiraTicket> } | null = null
+
+async function getJiraCache() {
+  if (_jiraCache) return _jiraCache
+  try {
+    const res = await fetch(`${BASE}data/jira-tickets.json`)
+    if (!res.ok) return { lastUpdated: '', tickets: {} as Record<string, JiraTicket> }
+    _jiraCache = await res.json() as { lastUpdated: string; tickets: Record<string, JiraTicket> }
+  } catch {
+    _jiraCache = { lastUpdated: '', tickets: {} }
+  }
+  return _jiraCache
+}
 
 const HORIZON_ORDER: Horizon[] = ['Now', 'Next', 'Later', 'UnderAssessment', 'InMaintenance']
 
@@ -143,4 +159,23 @@ export function createEvidence(_d: Partial<EvidenceInput>): Promise<EvidenceInpu
 }
 export function updateEvidence(_id: string, _d: Partial<EvidenceInput>): Promise<EvidenceInput> {
   return Promise.reject(new Error('Read-only deployment'))
+}
+
+export const JIRA_INACTIVE_STATUSES = new Set([
+  'Done', 'Closed', 'Resolved', "Won't Do", 'Duplicate', 'Cancelled', 'Rejected',
+])
+
+export function isJiraTicketActive(status: string): boolean {
+  return !JIRA_INACTIVE_STATUSES.has(status)
+}
+
+export async function getJiraTickets(keys: string[]): Promise<JiraTicketsResponse> {
+  if (!keys.length) return { tickets: [] }
+  const cache = await getJiraCache()
+  return {
+    tickets: keys.map(key => cache.tickets[key] ?? {
+      key, summary: '', status: '', assignee: null, priority: null,
+      url: '', error: 'Not in cache',
+    }),
+  }
 }

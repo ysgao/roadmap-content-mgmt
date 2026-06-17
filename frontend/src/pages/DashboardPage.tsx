@@ -1,7 +1,7 @@
 import { useEffect, useState, useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import type { RoadmapItem, ProvenanceEvent, MemberPriority, Horizon, HorizonsResponse } from '../types'
-import { getRoadmapItems, getProvenanceEvents, getMemberPriorities } from '../services/api'
+import { getRoadmapItems, getProvenanceEvents, getMemberPriorities, isJiraTicketActive } from '../services/api'
 import { useFilterStore } from '../store/filterStore'
 import FilterBar from '../components/dashboard/FilterBar'
 import HorizonGroup from '../components/dashboard/HorizonGroup'
@@ -11,13 +11,14 @@ import Glossary from '../components/shared/Glossary'
 const HORIZON_ORDER: Horizon[] = ['Now', 'Next', 'Later', 'UnderAssessment', 'InMaintenance']
 
 export default function DashboardPage() {
-  const { origin, siStatus, activityType } = useFilterStore()
+  const { origin, siStatus, activityType, hasActiveJira } = useFilterStore()
 
   const [allData, setAllData] = useState<HorizonsResponse | null>(null)
   const [provenanceEvents, setProvenanceEvents] = useState<ProvenanceEvent[]>([])
   const [priorities, setPriorities] = useState<MemberPriority[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
+  const [jiraStatuses] = useState<Record<string, string>>({})
 
   useEffect(() => {
     Promise.all([
@@ -40,12 +41,19 @@ export default function DashboardPage() {
   const roadmapData = useMemo<HorizonsResponse | null>(() => {
     if (!allData) return null
     const allItems: RoadmapItem[] = HORIZON_ORDER.flatMap(h => allData.horizons[h] ?? [])
-    const filtered = allItems.filter(item => {
+    let filtered = allItems.filter(item => {
       if (origin && !item.provenanceChips.some(c => c.shortCode === origin)) return false
       if (siStatus && item.siStatus !== siStatus) return false
       if (activityType && item.activityType !== activityType) return false
       return true
     })
+
+    if (hasActiveJira) {
+      filtered = filtered.filter(item =>
+        item.jiraTickets.some(key => isJiraTicketActive(jiraStatuses[key] ?? ''))
+      )
+    }
+
     const horizons = HORIZON_ORDER.reduce((acc, h) => {
       acc[h] = filtered.filter(i => i.horizon === h)
       return acc
@@ -55,7 +63,7 @@ export default function DashboardPage() {
       return acc
     }, {} as Record<Horizon, number>)
     return { horizons, counts, total: filtered.length }
-  }, [allData, origin, siStatus, activityType])
+  }, [allData, origin, siStatus, activityType, hasActiveJira, jiraStatuses])
 
   return (
     <div style={{ minHeight: '100vh', background: '#f5f7fa' }}>

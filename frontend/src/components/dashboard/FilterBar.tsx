@@ -27,17 +27,16 @@ const selectStyle: React.CSSProperties = {
 }
 
 export default function FilterBar({ provenanceEvents }: Props) {
-  const { origin, siStatus, activityType, setOrigin, setSiStatus, setActivityType, reset } = useFilterStore()
+  const { origin, siStatus, activityType, hasActiveJira, setOrigin, setSiStatus, setActivityType, setHasActiveJira, reset } = useFilterStore()
 
-  const hasFilters = origin !== '' || siStatus !== '' || activityType !== ''
+  const hasFilters = origin !== '' || siStatus !== '' || activityType !== '' || hasActiveJira
 
   return (
     <div
       style={{
         display: 'flex',
-        flexWrap: 'wrap',
+        flexDirection: 'column',
         gap: '12px',
-        alignItems: 'center',
         padding: '14px 16px',
         background: '#fff',
         border: '1px solid #e2e8f0',
@@ -45,65 +44,85 @@ export default function FilterBar({ provenanceEvents }: Props) {
         marginBottom: '20px',
       }}
     >
-      <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-        <label style={{ fontSize: '0.8rem', fontWeight: 600, color: '#718096', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
-          Origin
-        </label>
-        <select value={origin} onChange={e => setOrigin(e.target.value)} style={selectStyle}>
-          <option value="">All sources</option>
-          {provenanceEvents.map(ev => (
-            <option key={ev.id} value={ev.shortCode}>
-              {ev.displayLabel}
-            </option>
-          ))}
-        </select>
-      </div>
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px', alignItems: 'center' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+          <label style={{ fontSize: '0.8rem', fontWeight: 600, color: '#718096', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
+            Origin
+          </label>
+          <select value={origin} onChange={e => setOrigin(e.target.value)} style={selectStyle}>
+            <option value="">All sources</option>
+            {provenanceEvents.map(ev => (
+              <option key={ev.id} value={ev.shortCode}>
+                {ev.displayLabel}
+              </option>
+            ))}
+          </select>
+        </div>
 
-      <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-        <label style={{ fontSize: '0.8rem', fontWeight: 600, color: '#718096', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
-          Status
-        </label>
-        <select value={siStatus} onChange={e => setSiStatus(e.target.value)} style={selectStyle}>
-          <option value="">All statuses</option>
-          {SI_STATUS_OPTIONS.map(s => (
-            <option key={s} value={s}>
-              {s}
-            </option>
-          ))}
-        </select>
-      </div>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+          <label style={{ fontSize: '0.8rem', fontWeight: 600, color: '#718096', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
+            Status
+          </label>
+          <select value={siStatus} onChange={e => setSiStatus(e.target.value)} style={selectStyle}>
+            <option value="">All statuses</option>
+            {SI_STATUS_OPTIONS.map(s => (
+              <option key={s} value={s}>
+                {s}
+              </option>
+            ))}
+          </select>
+        </div>
 
-      <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-        <label style={{ fontSize: '0.8rem', fontWeight: 600, color: '#718096', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
-          Activity
-        </label>
-        <select value={activityType} onChange={e => setActivityType(e.target.value)} style={selectStyle}>
-          <option value="">All types</option>
-          {ACTIVITY_TYPE_OPTIONS.map(o => (
-            <option key={o.value} value={o.value}>
-              {o.label}
-            </option>
-          ))}
-        </select>
-      </div>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+          <label style={{ fontSize: '0.8rem', fontWeight: 600, color: '#718096', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
+            Activity
+          </label>
+          <select value={activityType} onChange={e => setActivityType(e.target.value)} style={selectStyle}>
+            <option value="">All types</option>
+            {ACTIVITY_TYPE_OPTIONS.map(o => (
+              <option key={o.value} value={o.value}>
+                {o.label}
+              </option>
+            ))}
+          </select>
+        </div>
 
-      {hasFilters && (
         <button
-          onClick={reset}
+          onClick={() => setHasActiveJira(!hasActiveJira)}
           style={{
             padding: '7px 14px',
             borderRadius: '6px',
-            border: '1px solid #e2e8f0',
-            background: '#f7fafc',
+            border: hasActiveJira ? '1px solid #4A90D9' : '1px solid #cbd5e0',
+            background: hasActiveJira ? '#ebf4ff' : '#fff',
             fontSize: '0.82rem',
-            color: '#718096',
+            color: hasActiveJira ? '#2b6cb0' : '#4a5568',
             cursor: 'pointer',
             fontWeight: 600,
+            transition: 'all 0.15s',
           }}
         >
-          Clear Filters
+          {hasActiveJira ? '✓ ' : ''}Active Jira Tickets
         </button>
-      )}
+
+        {hasFilters && (
+          <button
+            onClick={reset}
+            style={{
+              padding: '7px 14px',
+              borderRadius: '6px',
+              border: '1px solid #e2e8f0',
+              background: '#f7fafc',
+              fontSize: '0.82rem',
+              color: '#718096',
+              cursor: 'pointer',
+              fontWeight: 600,
+            }}
+          >
+            Clear Filters
+          </button>
+        )}
+      </div>
+
     </div>
   )
 }
