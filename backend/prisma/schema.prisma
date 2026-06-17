@@ -1,0 +1,116 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// Enum values stored as String in SQLite
+// SIStatus: Active | Planned | Paused | Deferred
+// ImpactRating: High | Medium | Low
+// Horizon: Now | Next | Later | UnderAssessment | InMaintenance
+// ActivityType: MemberDriven | Collaboration | CRG | Authoring | QAProgramme | Maintenance
+// TimelineClassification: Project | Continuous
+// AddressedStatus: Yes | Partially | No
+// PeriodHalf: H1 | H2
+// BarStyle: Active | Planned | Assessment | Ongoing
+// EventType: Survey | Workshop | Forum
+
+model RoadmapItem {
+  id                     String   @id @default(uuid())
+  title                  String
+  askDescription         String
+  siStatus               String
+  impactRating           String?
+  horizon                String
+  activityType           String
+  timelineClassification String
+  trigger                String?
+  progressNarrative      String?
+  addressedStatus        String?
+  nextMilestoneDate      DateTime?
+  implementationNotes    String?
+  displayOrder           Int      @default(0)
+  createdAt              DateTime @default(now())
+  updatedAt              DateTime @updatedAt
+
+  deliveryPeriods DeliveryPeriod[]
+  provenanceLinks ItemProvenanceLink[]
+}
+
+model DeliveryPeriod {
+  id            String   @id @default(uuid())
+  roadmapItemId String
+  periodLabel   String
+  periodYear    Int
+  periodHalf    String
+  barStyle      String
+  createdAt     DateTime @default(now())
+
+  roadmapItem RoadmapItem @relation(fields: [roadmapItemId], references: [id], onDelete: Cascade)
+}
+
+model ProvenanceEvent {
+  id               String   @id @default(uuid())
+  shortCode        String   @unique
+  displayLabel     String
+  eventType        String
+  eventDate        DateTime
+  participantCount Int?
+  createdAt        DateTime @default(now())
+
+  itemLinks     ItemProvenanceLink[]
+  priorityLinks PriorityProvenanceLink[]
+  evidenceInput EvidenceInput?
+}
+
+model ItemProvenanceLink {
+  id                String  @id @default(uuid())
+  roadmapItemId     String
+  provenanceEventId String
+  referenceNumber   Int?
+
+  roadmapItem     RoadmapItem     @relation(fields: [roadmapItemId], references: [id], onDelete: Cascade)
+  provenanceEvent ProvenanceEvent @relation(fields: [provenanceEventId], references: [id])
+}
+
+model MemberPriority {
+  id                 String   @id @default(uuid())
+  rank               Int      @unique
+  topicTitle         String
+  responseCount      Int
+  responsePercentage Float
+  currentSIActivity  String?
+  progressSummary    String?
+  nextMilestones     String?
+  riskFactors        String?
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+
+  provenanceLinks PriorityProvenanceLink[]
+}
+
+model PriorityProvenanceLink {
+  id                String @id @default(uuid())
+  memberPriorityId  String
+  provenanceEventId String
+
+  memberPriority  MemberPriority  @relation(fields: [memberPriorityId], references: [id], onDelete: Cascade)
+  provenanceEvent ProvenanceEvent @relation(fields: [provenanceEventId], references: [id])
+}
+
+model EvidenceInput {
+  id                String   @id @default(uuid())
+  provenanceEventId String   @unique
+  summary           String
+  rankedGaps        String?
+  themes            String?
+  priorityShifts    String?
+  groupCount        Int?
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  provenanceEvent ProvenanceEvent @relation(fields: [provenanceEventId], references: [id])
+}

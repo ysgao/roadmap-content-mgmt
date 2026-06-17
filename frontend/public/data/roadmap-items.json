@@ -1,0 +1,112 @@
+[
+  {
+    "id": "1",
+    "title": "Laboratory Medicine Content Development",
+    "askDescription": "Develop and enhance SNOMED CT content for laboratory medicine including result interpretation, specimen types, and laboratory procedures to support clinical laboratory information systems.",
+    "siStatus": "Active",
+    "impactRating": "High",
+    "horizon": "Now",
+    "activityType": "MemberDriven",
+    "timelineClassification": "Project",
+    "trigger": "Member survey priority #1",
+    "progressNarrative": "Active development underway. Hierarchy restructure complete for core laboratory concepts. Working with laboratory medicine SMEs to refine result interpretation content.",
+    "addressedStatus": "Partially",
+    "nextMilestoneDate": "2026-09-01",
+    "implementationNotes": null,
+    "displayOrder": 1,
+    "provenanceChips": [
+      { "shortCode": "Seoul24", "displayLabel": "Seoul '24", "referenceNumber": 1 },
+      { "shortCode": "Antwerp25", "displayLabel": "Antwerp '25" }
+    ],
+    "deliveryPeriods": [
+      { "periodLabel": "H1 2026", "periodYear": 2026, "periodHalf": "H1", "barStyle": "Active" },
+      { "periodLabel": "H2 2026", "periodYear": 2026, "periodHalf": "H2", "barStyle": "Active" }
+    ]
+  },
+  {
+    "id": "2",
+    "title": "Substances and Medications Hierarchy",
+    "askDescription": "Restructure the substances and medications hierarchy to improve clinical usability, align with international standards, and support medication management use cases.",
+    "siStatus": "Active",
+    "impactRating": "High",
+    "horizon": "Now",
+    "activityType": "MemberDriven",
+    "timelineClassification": "Project",
+    "trigger": "Member survey priority #2",
+    "progressNarrative": "Phase 1 hierarchy review complete. International alignment work commenced with key member national release centres.",
+    "addressedStatus": "Partially",
+    "nextMilestoneDate": "2026-12-01",
+    "implementationNotes": null,
+    "displayOrder": 2,
+    "provenanceChips": [
+      { "shortCode": "Seoul24", "displayLabel": "Seoul '24", "referenceNumber": 2 }
+    ],
+    "deliveryPeriods": [
+      { "periodLabel": "H1 2026", "periodYear": 2026, "periodHalf": "H1", "barStyle": "Active" },
+      { "periodLabel": "H2 2026", "periodYear": 2026, "periodHalf": "H2", "barStyle": "Planned" }
+    ]
+  },
+  {
+    "id": "3",
+    "title": "Clinical Findings Quality Improvement",
+    "askDescription": "Systematic quality improvement of the clinical findings hierarchy to address gaps, inconsistencies, and usability issues identified through member feedback and QA analysis.",
+    "siStatus": "Planned",
+    "impactRating": "Medium",
+    "horizon": "Next",
+    "activityType": "QAProgramme",
+    "timelineClassification": "Project",
+    "trigger": "Member survey priority #3 + QA programme findings",
+    "progressNarrative": "Gap analysis and prioritisation complete. Ready to begin remediation in H2 2026.",
+    "addressedStatus": null,
+    "nextMilestoneDate": null,
+    "implementationNotes": null,
+    "displayOrder": 1,
+    "provenanceChips": [
+      { "shortCode": "Seoul24", "displayLabel": "Seoul '24", "referenceNumber": 3 },
+      { "shortCode": "Vienna26", "displayLabel": "Vienna '26" }
+    ],
+    "deliveryPeriods": [
+      { "periodLabel": "H2 2026", "periodYear": 2026, "periodHalf": "H2", "barStyle": "Planned" }
+    ]
+  },
+  {
+    "id": "4",
+    "title": "Pharmacy and Medication Management",
+    "askDescription": "Collaborative development of pharmacy and medication management content with key partner organisations to support pharmacy workflows, prescribing, and dispensing use cases.",
+    "siStatus": "Planned",
+    "impactRating": "Low",
+    "horizon": "Later",
+    "activityType": "Collaboration",
+    "timelineClassification": "Project",
+    "trigger": "Member survey priority #5",
+    "progressNarrative": "Partner organisations identified. Collaboration framework being established.",
+    "addressedStatus": null,
+    "nextMilestoneDate": null,
+    "implementationNotes": null,
+    "displayOrder": 1,
+    "provenanceChips": [
+      { "shortCode": "Seoul24", "displayLabel": "Seoul '24", "referenceNumber": 5 }
+    ],
+    "deliveryPeriods": [
+      { "periodLabel": "H1 2027", "periodYear": 2027, "periodHalf": "H1", "barStyle": "Planned" }
+    ]
+  },
+  {
+    "id": "5",
+    "title": "Terminology Maintenance",
+    "askDescription": "Ongoing maintenance of existing SNOMED CT content including error corrections, requested additions, and keeping content current with evolving clinical knowledge.",
+    "siStatus": "Active",
+    "impactRating": null,
+    "horizon": "InMaintenance",
+    "activityType": "Maintenance",
+    "timelineClassification": "Continuous",
+    "trigger": null,
+    "progressNarrative": "Continuous maintenance programme running with regular release cycles.",
+    "addressedStatus": "Yes",
+    "nextMilestoneDate": null,
+    "implementationNotes": null,
+    "displayOrder": 1,
+    "provenanceChips": [],
+    "deliveryPeriods": []
+  }
+]

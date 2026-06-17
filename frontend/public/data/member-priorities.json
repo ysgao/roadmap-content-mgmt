@@ -1,0 +1,62 @@
+[
+  {
+    "id": "1",
+    "rank": 1,
+    "topicTitle": "Laboratory",
+    "responseCount": 14,
+    "responsePercentage": 60.87,
+    "currentSIActivity": "Active development of laboratory medicine content",
+    "progressSummary": "Significant progress made in Q1 2026",
+    "nextMilestones": "Complete hierarchy restructure by H2 2026",
+    "riskFactors": "Dependency on external SME availability",
+    "provenanceEvents": [{ "shortCode": "Seoul24", "displayLabel": "Seoul '24" }]
+  },
+  {
+    "id": "2",
+    "rank": 2,
+    "topicTitle": "Substances",
+    "responseCount": 12,
+    "responsePercentage": 52.17,
+    "currentSIActivity": "Substances and medications hierarchy review",
+    "progressSummary": "Phase 1 complete, phase 2 in progress",
+    "nextMilestones": "International substance alignment by H1 2027",
+    "riskFactors": "Complex cross-hierarchy dependencies",
+    "provenanceEvents": [{ "shortCode": "Seoul24", "displayLabel": "Seoul '24" }]
+  },
+  {
+    "id": "3",
+    "rank": 3,
+    "topicTitle": "Clinical findings",
+    "responseCount": 10,
+    "responsePercentage": 43.48,
+    "currentSIActivity": "Quality improvement programme for clinical findings",
+    "progressSummary": "Gap analysis complete",
+    "nextMilestones": "Begin remediation in H2 2026",
+    "riskFactors": "Large scope, prioritisation needed",
+    "provenanceEvents": [{ "shortCode": "Seoul24", "displayLabel": "Seoul '24" }]
+  },
+  {
+    "id": "4",
+    "rank": 4,
+    "topicTitle": "Procedures",
+    "responseCount": 9,
+    "responsePercentage": 39.13,
+    "currentSIActivity": "Procedure hierarchy assessment",
+    "progressSummary": "Assessment phase ongoing",
+    "nextMilestones": "Assessment complete by end of 2026",
+    "riskFactors": "Resource constraints",
+    "provenanceEvents": [{ "shortCode": "Seoul24", "displayLabel": "Seoul '24" }]
+  },
+  {
+    "id": "5",
+    "rank": 5,
+    "topicTitle": "Pharmacy",
+    "responseCount": 8,
+    "responsePercentage": 34.78,
+    "currentSIActivity": "Pharmacy collaboration planning",
+    "progressSummary": "Partner organisations identified",
+    "nextMilestones": "Formal collaboration agreement H1 2027",
+    "riskFactors": "Multi-stakeholder coordination complexity",
+    "provenanceEvents": [{ "shortCode": "Seoul24", "displayLabel": "Seoul '24" }]
+  }
+]

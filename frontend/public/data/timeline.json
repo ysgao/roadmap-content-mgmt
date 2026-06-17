@@ -1,0 +1,55 @@
+{
+  "periods": ["H1 2026", "H2 2026", "H1 2027", "H2 2027", "H1 2028", "H2 2028", "2029+"],
+  "items": [
+    {
+      "id": "1",
+      "title": "Laboratory Medicine Content Development",
+      "horizon": "Now",
+      "siStatus": "Active",
+      "activityType": "MemberDriven",
+      "deliveryPeriods": [
+        { "periodLabel": "H1 2026", "barStyle": "Active" },
+        { "periodLabel": "H2 2026", "barStyle": "Active" }
+      ]
+    },
+    {
+      "id": "2",
+      "title": "Substances and Medications Hierarchy",
+      "horizon": "Now",
+      "siStatus": "Active",
+      "activityType": "MemberDriven",
+      "deliveryPeriods": [
+        { "periodLabel": "H1 2026", "barStyle": "Active" },
+        { "periodLabel": "H2 2026", "barStyle": "Planned" }
+      ]
+    },
+    {
+      "id": "3",
+      "title": "Clinical Findings Quality Improvement",
+      "horizon": "Next",
+      "siStatus": "Planned",
+      "activityType": "QAProgramme",
+      "deliveryPeriods": [
+        { "periodLabel": "H2 2026", "barStyle": "Planned" }
+      ]
+    },
+    {
+      "id": "4",
+      "title": "Pharmacy and Medication Management",
+      "horizon": "Later",
+      "siStatus": "Planned",
+      "activityType": "Collaboration",
+      "deliveryPeriods": [
+        { "periodLabel": "H1 2027", "barStyle": "Planned" }
+      ]
+    },
+    {
+      "id": "5",
+      "title": "Terminology Maintenance",
+      "horizon": "InMaintenance",
+      "siStatus": "Active",
+      "activityType": "Maintenance",
+      "deliveryPeriods": []
+    }
+  ]
+}

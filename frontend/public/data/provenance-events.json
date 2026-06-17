@@ -1,0 +1,26 @@
+[
+  {
+    "id": "1",
+    "shortCode": "Seoul24",
+    "displayLabel": "Seoul '24",
+    "eventType": "Survey",
+    "eventDate": "2024-10-01",
+    "participantCount": 23
+  },
+  {
+    "id": "2",
+    "shortCode": "Antwerp25",
+    "displayLabel": "Antwerp '25",
+    "eventType": "Workshop",
+    "eventDate": "2025-04-01",
+    "participantCount": 16
+  },
+  {
+    "id": "3",
+    "shortCode": "Vienna26",
+    "displayLabel": "Vienna '26",
+    "eventType": "Forum",
+    "eventDate": "2026-04-01",
+    "participantCount": 9
+  }
+]
