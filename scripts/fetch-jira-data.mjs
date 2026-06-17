@@ -3,7 +3,15 @@
  * and writes to frontend/public/data/jira-tickets.json
  *
  * Run via GitHub Actions (see .github/workflows/fetch-jira-data.yml)
- * Required env vars: JIRA_BASE_URL, JIRA_EMAIL, JIRA_API_TOKEN, GOOGLE_SHEETS_ID
+ *
+ * Required secrets/vars:
+ *   JIRA_BASE_URL   = https://projects.jira.snomed.org
+ *   JIRA_API_TOKEN  = Personal Access Token (Jira DC: Profile > Personal Access Tokens)
+ *   GOOGLE_SHEETS_ID = Google Sheet ID (same as VITE_GOOGLE_SHEETS_ID)
+ *
+ * Optional:
+ *   JIRA_EMAIL      = Only needed if using Basic auth (not PAT). If set, uses
+ *                     Basic base64(email:token). If not set, uses Bearer token (PAT).
  */
 
 import https from 'https'
@@ -16,8 +24,16 @@ const OUTPUT = path.join(__dirname, '../frontend/public/data/jira-tickets.json')
 
 const SHEET_ID = process.env.GOOGLE_SHEETS_ID
 const JIRA_BASE_URL = (process.env.JIRA_BASE_URL ?? '').replace(/\/$/, '')
-const JIRA_EMAIL = process.env.JIRA_EMAIL
+const JIRA_EMAIL = process.env.JIRA_EMAIL    // optional — omit for PAT Bearer auth
 const JIRA_API_TOKEN = process.env.JIRA_API_TOKEN
+
+// Auth header: Bearer PAT (Jira DC preferred) or Basic email:token (Atlassian Cloud)
+function buildAuthHeader() {
+  if (JIRA_EMAIL) {
+    return 'Basic ' + Buffer.from(`${JIRA_EMAIL}:${JIRA_API_TOKEN}`).toString('base64')
+  }
+  return `Bearer ${JIRA_API_TOKEN}`
+}
 
 function httpsGet(url) {
   return new Promise((resolve, reject) => {
@@ -35,7 +51,11 @@ function httpsGetAuth(url, authHeader) {
     const options = {
       hostname: parsed.hostname,
       path: parsed.pathname + parsed.search,
-      headers: { 'Authorization': authHeader, 'Accept': 'application/json' },
+      headers: {
+        'Authorization': authHeader,
+        'Accept': 'application/json',
+        'User-Agent': 'github-actions-jira-fetch/1.0',
+      },
     }
     https.get(options, res => {
       let data = ''
@@ -54,7 +74,6 @@ async function getTicketKeysFromSheet() {
   const url = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:json&sheet=RoadmapItems`
   const { body } = await httpsGet(url)
 
-  // Strip GViz JSONP wrapper
   const jsonStr = body.replace(/^[^{]*/, '').replace(/\);?\s*$/, '')
   let data
   try { data = JSON.parse(jsonStr) } catch { return [] }
@@ -81,7 +100,8 @@ async function getTicketKeysFromSheet() {
 }
 
 async function fetchJiraTicket(key, authHeader) {
-  const url = `${JIRA_BASE_URL}/rest/api/3/issue/${encodeURIComponent(key)}?fields=summary,status,assignee,priority`
+  // Use REST API v2 (Jira Server/Data Center); also works on Atlassian Cloud
+  const url = `${JIRA_BASE_URL}/rest/api/2/issue/${encodeURIComponent(key)}?fields=summary,status,assignee,priority`
   const result = {
     key,
     summary: '',
@@ -93,6 +113,7 @@ async function fetchJiraTicket(key, authHeader) {
 
   try {
     const { status, body } = await httpsGetAuth(url, authHeader)
+    if (status === 401) { result.error = 'Authentication failed'; return result }
     if (status === 404) { result.error = 'Not found'; return result }
     if (status === 403) { result.error = 'Access restricted'; return result }
     if (status !== 200) { result.error = `HTTP ${status}`; return result }
@@ -121,14 +142,15 @@ async function main() {
     return
   }
 
-  if (!JIRA_BASE_URL || !JIRA_EMAIL || !JIRA_API_TOKEN) {
-    console.error('Missing JIRA_BASE_URL, JIRA_EMAIL, or JIRA_API_TOKEN')
+  if (!JIRA_BASE_URL || !JIRA_API_TOKEN) {
+    console.error('Missing JIRA_BASE_URL or JIRA_API_TOKEN')
     process.exit(1)
   }
 
-  const authHeader = 'Basic ' + Buffer.from(`${JIRA_EMAIL}:${JIRA_API_TOKEN}`).toString('base64')
+  const authHeader = buildAuthHeader()
+  console.log(`Auth: ${JIRA_EMAIL ? 'Basic (email:token)' : 'Bearer (PAT)'}`)
+  console.log(`Fetching ${keys.length} tickets from ${JIRA_BASE_URL}...`)
 
-  console.log(`Fetching ${keys.length} tickets from Jira...`)
   const results = await Promise.all(keys.map(key => fetchJiraTicket(key, authHeader)))
 
   const tickets = {}
