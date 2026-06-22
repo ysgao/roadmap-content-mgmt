@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-22T07:33:48.290Z",
+  "lastUpdated": "2026-06-22T13:30:09.296Z",
   "tickets": {
     "IHTSDO-1287": {
       "key": "IHTSDO-1287",
@@ -1180,7 +1180,7 @@
     "IHTSDO-400": {
       "key": "IHTSDO-400",
       "summary": "artf6292-psychiatry and mental health terminology review and update",
-      "status": "Reopened",
+      "status": "In Combined Inception & Elaboration",
       "assignee": "Elaine Wooler",
       "priority": "Critical / High",
       "url": "https://snomed.atlassian.net/browse/IHTSDO-400"
