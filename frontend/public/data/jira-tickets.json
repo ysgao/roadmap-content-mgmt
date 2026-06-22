@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-21T23:06:04.515Z",
+  "lastUpdated": "2026-06-22T02:00:06.992Z",
   "tickets": {
     "IHTSDO-1287": {
       "key": "IHTSDO-1287",
@@ -13,7 +13,7 @@
       "key": "IHTSDO-1285",
       "summary": "Request for new attribute be added to the Substance Hierarchy to link to organism",
       "status": "In Inception",
-      "assignee": "Farzaneh Ashrafi",
+      "assignee": "User 0f4cc",
       "priority": "Major / Medium",
       "url": "https://snomed.atlassian.net/browse/IHTSDO-1285"
     },
@@ -21,7 +21,7 @@
       "key": "IHTSDO-1263",
       "summary": "Drug therapy",
       "status": "In Construction",
-      "assignee": "Karen Rees",
+      "assignee": "User bbb32",
       "priority": "Major / Medium",
       "url": "https://snomed.atlassian.net/browse/IHTSDO-1263"
     },
@@ -53,7 +53,7 @@
       "key": "IHTSDO-1270",
       "summary": "Gender derived Body structures for < 1297161006 |Surgical procedure on outlet of urinary bladder (procedure)|",
       "status": "In Construction",
-      "assignee": "Victor Medina",
+      "assignee": "User 21651",
       "priority": "Minor / Low",
       "url": "https://snomed.atlassian.net/browse/IHTSDO-1270"
     },
@@ -61,7 +61,7 @@
       "key": "IHTSDO-1258",
       "summary": "Remodeling of 1263452006 |Anesthesia and/or sedation procedure (procedure)| hierarchy",
       "status": "Accepted",
-      "assignee": "Victor Medina",
+      "assignee": "User 21651",
       "priority": "Major / Medium",
       "url": "https://snomed.atlassian.net/browse/IHTSDO-1258"
     },
@@ -109,7 +109,7 @@
       "key": "IHTSDO-997",
       "summary": "Surgical procedures which are not subsumed by | Surgical procedure | due the the target value of the |Method | attribute",
       "status": "Accepted",
-      "assignee": "Victor Medina",
+      "assignee": "User 21651",
       "priority": "Blocker / Highest",
       "url": "https://snomed.atlassian.net/browse/IHTSDO-997"
     },
@@ -149,7 +149,7 @@
       "key": "IHTSDO-295",
       "summary": "artf228474-hereditary cancer predisposition syndrome",
       "status": "In Elaboration",
-      "assignee": "Maria Braithwaite",
+      "assignee": "User f1a81",
       "priority": "Should",
       "url": "https://snomed.atlassian.net/browse/IHTSDO-295"
     },
@@ -181,7 +181,7 @@
       "key": "IHTSDO-1132",
       "summary": "Review of << 409793007 |Antimicrobial resistant bacteria|",
       "status": "In Fast Track",
-      "assignee": "Jeff Wilcke",
+      "assignee": "User 4a978",
       "priority": "Major / Medium",
       "url": "https://snomed.atlassian.net/browse/IHTSDO-1132"
     },
@@ -221,7 +221,7 @@
       "key": "IHTSDO-1255",
       "summary": "Parent and caregiver finding and observable concepts - terming and hierarchical placement issues ambiguity",
       "status": "In Inception",
-      "assignee": "Cathy Richardson",
+      "assignee": "User 2a710",
       "priority": "Major / Medium",
       "url": "https://snomed.atlassian.net/browse/IHTSDO-1255"
     },
@@ -293,7 +293,7 @@
       "key": "IHTSDO-1243",
       "summary": "Review 409709004|Chromosomal disorder (disorder)| and subtypes",
       "status": "Accepted",
-      "assignee": "Jim Case",
+      "assignee": "User 4159e",
       "priority": "Major / Medium",
       "url": "https://snomed.atlassian.net/browse/IHTSDO-1243"
     },
@@ -317,7 +317,7 @@
       "key": "IHTSDO-74",
       "summary": "artf235646-Glycogen storage disease: concept modeling review required",
       "status": "Accepted",
-      "assignee": "Maria Braithwaite",
+      "assignee": "User f1a81",
       "priority": "Critical / High",
       "url": "https://snomed.atlassian.net/browse/IHTSDO-74"
     },
@@ -325,7 +325,7 @@
       "key": "IHTSDO-84",
       "summary": "artf227283- Syphilis (disorder) hierarchy needs review",
       "status": "Accepted",
-      "assignee": "Suzanne Santamaria",
+      "assignee": "User fb04d",
       "priority": "Minor / Low",
       "url": "https://snomed.atlassian.net/browse/IHTSDO-84"
     },
@@ -341,7 +341,7 @@
       "key": "IHTSDO-1282",
       "summary": "Cerebral: brain or cerebrum?",
       "status": "In Construction",
-      "assignee": "Krista Lilly",
+      "assignee": "User 046bf",
       "priority": "Major / Medium",
       "url": "https://snomed.atlassian.net/browse/IHTSDO-1282"
     },
@@ -357,7 +357,7 @@
       "key": "IHTSDO-1113",
       "summary": "245849007 |Post-surgical anatomy (morphologic abnormality)| hierarchy and use as a target value for the Finding site and Associated morphology attributes.",
       "status": "Accepted",
-      "assignee": "Yongsheng Gao",
+      "assignee": "User 22de8",
       "priority": "Major / Medium",
       "url": "https://snomed.atlassian.net/browse/IHTSDO-1113"
     },
@@ -365,7 +365,7 @@
       "key": "IHTSDO-1050",
       "summary": "Acquired Body Structure as targets of \"Finding site\"",
       "status": "Accepted",
-      "assignee": "Yongsheng Gao",
+      "assignee": "User 22de8",
       "priority": "Major / Medium",
       "url": "https://snomed.atlassian.net/browse/IHTSDO-1050"
     },
@@ -373,7 +373,7 @@
       "key": "IHTSDO-933",
       "summary": "artf227331-Vascular disorder of <body structure>",
       "status": "In Combined Inception & Elaboration",
-      "assignee": "Yongsheng Gao",
+      "assignee": "User 22de8",
       "priority": "Minor / Low",
       "url": "https://snomed.atlassian.net/browse/IHTSDO-933"
     },
@@ -421,7 +421,7 @@
       "key": "IHTSDO-441",
       "summary": "artf222628-Concept model: prevention / preventive regime",
       "status": "Accepted",
-      "assignee": "Elaine Wooler",
+      "assignee": "User db909",
       "priority": "Minor / Low",
       "url": "https://snomed.atlassian.net/browse/IHTSDO-441"
     },
@@ -429,7 +429,7 @@
       "key": "IHTSDO-844",
       "summary": "artf6314-Immunization and vaccination",
       "status": "In Elaboration",
-      "assignee": "Karen Rees",
+      "assignee": "User bbb32",
       "priority": "Blocker / Highest",
       "url": "https://snomed.atlassian.net/browse/IHTSDO-844"
     },
@@ -445,7 +445,7 @@
       "key": "IHTSDO-1206",
       "summary": "Review 415178003 |Process (observable entity)| subtypes for inactivation and replace in 719982003 |Process (qualifier value)| hierarchy",
       "status": "On Hold",
-      "assignee": "Elaine Wooler",
+      "assignee": "User db909",
       "priority": "Major / Medium",
       "url": "https://snomed.atlassian.net/browse/IHTSDO-1206"
     },
@@ -461,7 +461,7 @@
       "key": "IHTSDO-1280",
       "summary": "Improvement of ADL observable content",
       "status": "Accepted",
-      "assignee": "Cathy Richardson",
+      "assignee": "User 2a710",
       "priority": "Blocker / Highest",
       "url": "https://snomed.atlassian.net/browse/IHTSDO-1280"
     },
@@ -469,7 +469,7 @@
       "key": "IHTSDO-1010",
       "summary": "Modelling of \"impairment\" finding and disorder concepts",
       "status": "Accepted",
-      "assignee": "Sarah Lukha",
+      "assignee": "User c3104",
       "priority": "Major / Medium",
       "url": "https://snomed.atlassian.net/browse/IHTSDO-1010"
     },
@@ -477,7 +477,7 @@
       "key": "IHTSDO-1009",
       "summary": "Modelling of \"dysfunction\" finding and disorder concepts",
       "status": "Accepted",
-      "assignee": "Jim Case",
+      "assignee": "User 4159e",
       "priority": "Major / Medium",
       "url": "https://snomed.atlassian.net/browse/IHTSDO-1009"
     },
@@ -485,7 +485,7 @@
       "key": "IHTSDO-999",
       "summary": "Inconsistencies for functioning findings ",
       "status": "On Hold",
-      "assignee": "Elaine Wooler",
+      "assignee": "User db909",
       "priority": "Trivial / Lowest",
       "url": "https://snomed.atlassian.net/browse/IHTSDO-999"
     },
@@ -501,7 +501,7 @@
       "key": "IHTSDO-904",
       "summary": "artf222281-Lack of distinction between structure and function",
       "status": "Accepted",
-      "assignee": "Yongsheng Gao",
+      "assignee": "User 22de8",
       "priority": "Major / Medium",
       "url": "https://snomed.atlassian.net/browse/IHTSDO-904"
     },
@@ -509,7 +509,7 @@
       "key": "IHTSDO-1227",
       "summary": "Representation of left heart failure/right heart failure following definition changes",
       "status": "On Hold",
-      "assignee": "Elaine Wooler",
+      "assignee": "User db909",
       "priority": "Major / Medium",
       "url": "https://snomed.atlassian.net/browse/IHTSDO-1227"
     },
@@ -517,7 +517,7 @@
       "key": "IHTSDO-998",
       "summary": "Modeling of Ebstein anomaly",
       "status": "In Fast Track",
-      "assignee": "David Robinson",
+      "assignee": "User d1468",
       "priority": "Minor / Low",
       "url": "https://snomed.atlassian.net/browse/IHTSDO-998"
     },
@@ -525,7 +525,7 @@
       "key": "IHTSDO-379",
       "summary": "artf228667-Cardiomyopathy",
       "status": "Accepted",
-      "assignee": "Michael Harwood-Jones",
+      "assignee": "User 64bf3",
       "priority": "Minor / Low",
       "url": "https://snomed.atlassian.net/browse/IHTSDO-379"
     },
@@ -557,7 +557,7 @@
       "key": "IHTSDO-731",
       "summary": "Unexpected classification: embolism is a soft tissue disorder",
       "status": "In Elaboration",
-      "assignee": "Yongsheng Gao",
+      "assignee": "User 22de8",
       "priority": "Minor / Low",
       "url": "https://snomed.atlassian.net/browse/IHTSDO-731"
     },
@@ -565,7 +565,7 @@
       "key": "IHTSDO-924",
       "summary": "artf6316-Chronic renal disease naming and modeling issues (same or different)",
       "status": "In Elaboration",
-      "assignee": "Yongsheng Gao",
+      "assignee": "User 22de8",
       "priority": "Minor / Low",
       "url": "https://snomed.atlassian.net/browse/IHTSDO-924"
     },
@@ -581,7 +581,7 @@
       "key": "IHTSDO-915",
       "summary": "artf235727-Inadvertent, unintended or accidental incidents.",
       "status": "On Hold",
-      "assignee": "Monica Harry",
+      "assignee": "User 1a903",
       "priority": "Minor / Low",
       "url": "https://snomed.atlassian.net/browse/IHTSDO-915"
     },
@@ -597,7 +597,7 @@
       "key": "IHTSDO-1295",
       "summary": "Procedure concepts with the term \"Synchronous\" in the descriptions.",
       "status": "In Fast Track",
-      "assignee": "Cathy Richardson",
+      "assignee": "User 2a710",
       "priority": "Minor / Low",
       "url": "https://snomed.atlassian.net/browse/IHTSDO-1295"
     },
@@ -605,7 +605,7 @@
       "key": "IHTSDO-1293",
       "summary": "80406003 |Pathological dislocation of joint (disorder)| - should not be traumatic",
       "status": "Accepted",
-      "assignee": "Nicola Ingram",
+      "assignee": "User 3eb85",
       "priority": "Major / Medium",
       "url": "https://snomed.atlassian.net/browse/IHTSDO-1293"
     },
@@ -621,7 +621,7 @@
       "key": "IHTSDO-1290",
       "summary": "Assault vs abuse vs violence",
       "status": "Accepted",
-      "assignee": "Cathy Richardson",
+      "assignee": "User 2a710",
       "priority": "Major / Medium",
       "url": "https://snomed.atlassian.net/browse/IHTSDO-1290"
     },
@@ -629,7 +629,7 @@
       "key": "IHTSDO-1283",
       "summary": "Conjugate acid/ base - review of terms and synonyms",
       "status": "Accepted",
-      "assignee": "Karen Rees",
+      "assignee": "User bbb32",
       "priority": "Major / Medium",
       "url": "https://snomed.atlassian.net/browse/IHTSDO-1283"
     },
@@ -677,7 +677,7 @@
       "key": "IHTSDO-1238",
       "summary": "266710000 |Drugs not taken/completed (situation)|",
       "status": "Accepted",
-      "assignee": "Nicola Ingram",
+      "assignee": "User 3eb85",
       "priority": "Major / Medium",
       "url": "https://snomed.atlassian.net/browse/IHTSDO-1238"
     },
@@ -685,7 +685,7 @@
       "key": "IHTSDO-1271",
       "summary": "Review needed for Aspiration concepts as Findings, Disorders and Events.",
       "status": "In Combined Inception & Elaboration",
-      "assignee": "Cathy Richardson",
+      "assignee": "User 2a710",
       "priority": "Major / Medium",
       "url": "https://snomed.atlassian.net/browse/IHTSDO-1271"
     },
@@ -693,7 +693,7 @@
       "key": "IHTSDO-1235",
       "summary": "Injury vs damage - degree of synonymy?",
       "status": "Accepted",
-      "assignee": "Monica Harry",
+      "assignee": "User 1a903",
       "priority": "Major / Medium",
       "url": "https://snomed.atlassian.net/browse/IHTSDO-1235"
     },
@@ -701,7 +701,7 @@
       "key": "IHTSDO-1273",
       "summary": "230126006 |Finding relating to infant feeding (finding)| needs review and rework",
       "status": "Accepted",
-      "assignee": "Suzanne Santamaria",
+      "assignee": "User fb04d",
       "priority": "Major / Medium",
       "url": "https://snomed.atlassian.net/browse/IHTSDO-1273"
     },
@@ -709,7 +709,7 @@
       "key": "IHTSDO-1230",
       "summary": "Review of hierarchy 281667005 |Maternal history of disorder (situation)|",
       "status": "Accepted",
-      "assignee": "Maria Braithwaite",
+      "assignee": "User f1a81",
       "priority": "Minor / Low",
       "url": "https://snomed.atlassian.net/browse/IHTSDO-1230"
     },
@@ -733,7 +733,7 @@
       "key": "IHTSDO-1204",
       "summary": "Concepts <<243120004 |Regimes and therapies (regime/therapy)| with \"management\" in FSN require review to potentially sit under 119270007 Management procedure (procedure)",
       "status": "Accepted",
-      "assignee": "Elaine Wooler",
+      "assignee": "User db909",
       "priority": "Minor / Low",
       "url": "https://snomed.atlassian.net/browse/IHTSDO-1204"
     },
@@ -765,7 +765,7 @@
       "key": "IHTSDO-1161",
       "summary": "118215003 | Delivery finding (finding) | with child concept 118216002 | Labor finding (finding) |, vs. a lot of concepts with FSN '... in labor AND/OR delivery'.",
       "status": "Accepted",
-      "assignee": "Maria Braithwaite",
+      "assignee": "User f1a81",
       "priority": "Major / Medium",
       "url": "https://snomed.atlassian.net/browse/IHTSDO-1161"
     },
@@ -797,7 +797,7 @@
       "key": "IHTSDO-1122",
       "summary": "Inactivation of gender-qualified concepts",
       "status": "In Elaboration",
-      "assignee": "Victor Medina",
+      "assignee": "User 21651",
       "priority": "Major / Medium",
       "url": "https://snomed.atlassian.net/browse/IHTSDO-1122"
     },
@@ -813,7 +813,7 @@
       "key": "IHTSDO-1109",
       "summary": "Eponymous terms which should be inactivated.",
       "status": "Accepted",
-      "assignee": "Monica Harry",
+      "assignee": "User 1a903",
       "priority": "Major / Medium",
       "url": "https://snomed.atlassian.net/browse/IHTSDO-1109"
     },
@@ -821,7 +821,7 @@
       "key": "IHTSDO-1100",
       "summary": "Clarification of 38109001 |Osseous metaplasia (morphologic abnormality)| ",
       "status": "Accepted",
-      "assignee": "Elaine Wooler",
+      "assignee": "User db909",
       "priority": "Major / Medium",
       "url": "https://snomed.atlassian.net/browse/IHTSDO-1100"
     },
@@ -829,7 +829,7 @@
       "key": "IHTSDO-1086",
       "summary": "Administrative vs. Clinical concepts",
       "status": "Accepted",
-      "assignee": "Monica Harry",
+      "assignee": "User 1a903",
       "priority": "Major / Medium",
       "url": "https://snomed.atlassian.net/browse/IHTSDO-1086"
     },
@@ -845,7 +845,7 @@
       "key": "IHTSDO-1062",
       "summary": "Inconsistent finding site of ulcers",
       "status": "In Construction",
-      "assignee": "Monica Harry",
+      "assignee": "User 1a903",
       "priority": "Major / Medium",
       "url": "https://snomed.atlassian.net/browse/IHTSDO-1062"
     },
@@ -869,7 +869,7 @@
       "key": "IHTSDO-1294",
       "summary": "Boil and abscess- Duplication of content",
       "status": "In Fast Track",
-      "assignee": "Cathy Richardson",
+      "assignee": "User 2a710",
       "priority": "Major / Medium",
       "url": "https://snomed.atlassian.net/browse/IHTSDO-1294"
     },
@@ -877,7 +877,7 @@
       "key": "IHTSDO-1033",
       "summary": "Meaning of X level: management of existing content",
       "status": "Accepted",
-      "assignee": "Jim Case",
+      "assignee": "User 4159e",
       "priority": "Trivial / Lowest",
       "url": "https://snomed.atlassian.net/browse/IHTSDO-1033"
     },
@@ -893,7 +893,7 @@
       "key": "IHTSDO-1016",
       "summary": "<x>  with antenatal/postnatal problem/complication, <x> - delivered with postnatal problem/complication, delivered/not delivered",
       "status": "In Construction",
-      "assignee": "Jim Case",
+      "assignee": "User 4159e",
       "priority": "Major / Medium",
       "url": "https://snomed.atlassian.net/browse/IHTSDO-1016"
     },
@@ -901,7 +901,7 @@
       "key": "IHTSDO-1153",
       "summary": "Conflicting terms in the Findings hierarchy related to neonatal terms ",
       "status": "Accepted",
-      "assignee": "Suzanne Santamaria",
+      "assignee": "User fb04d",
       "priority": "Major / Medium",
       "url": "https://snomed.atlassian.net/browse/IHTSDO-1153"
     },
@@ -909,7 +909,7 @@
       "key": "IHTSDO-1011",
       "summary": "Multiple issues with 10692681000119108 |Disorder of respiratory system exacerbated by aspirin (disorder)|",
       "status": "Accepted",
-      "assignee": "Jim Case",
+      "assignee": "User 4159e",
       "priority": "Minor / Low",
       "url": "https://snomed.atlassian.net/browse/IHTSDO-1011"
     },
@@ -917,7 +917,7 @@
       "key": "IHTSDO-1008",
       "summary": "Non metabolic complications of diabetes being subsumed by Abnormal metabolic state in diabetes mellitus (disorder)",
       "status": "In Fast Track",
-      "assignee": "Cathy Richardson",
+      "assignee": "User 2a710",
       "priority": "Critical / High",
       "url": "https://snomed.atlassian.net/browse/IHTSDO-1008"
     },
@@ -925,7 +925,7 @@
       "key": "IHTSDO-990",
       "summary": "Clarification of the difference between entrapment and compression",
       "status": "Accepted",
-      "assignee": "Victor Medina",
+      "assignee": "User 21651",
       "priority": "Minor / Low",
       "url": "https://snomed.atlassian.net/browse/IHTSDO-990"
     },
@@ -973,7 +973,7 @@
       "key": "IHTSDO-969",
       "summary": "Findings of \"Referred to X\" vs. Procedures of \"Referral to X\" ",
       "status": "Accepted",
-      "assignee": "Monica Harry",
+      "assignee": "User 1a903",
       "priority": "Major / Medium",
       "url": "https://snomed.atlassian.net/browse/IHTSDO-969"
     },
@@ -981,7 +981,7 @@
       "key": "IHTSDO-64",
       "summary": "artf233925-Herniated vs. prolapsed disc: Review hierarchy 73589001|Intervertebral disc prolapse (disorder)",
       "status": "Accepted",
-      "assignee": "Jim Case",
+      "assignee": "User 4159e",
       "priority": "Trivial / Lowest",
       "url": "https://snomed.atlassian.net/browse/IHTSDO-64"
     },
@@ -989,7 +989,7 @@
       "key": "IHTSDO-1142",
       "summary": "artf233786-Alignment of Existing Content to \"X with Y\" and \"X due to Y\" patterns from \"X associated with Y\"",
       "status": "On Hold",
-      "assignee": "Michael Harwood-Jones",
+      "assignee": "User 64bf3",
       "priority": "Minor / Low",
       "url": "https://snomed.atlassian.net/browse/IHTSDO-1142"
     },
@@ -1021,7 +1021,7 @@
       "key": "IHTSDO-681",
       "summary": "artf227282-Hernia procedures and disorders",
       "status": "Accepted",
-      "assignee": "Victor Medina",
+      "assignee": "User 21651",
       "priority": "Major / Medium",
       "url": "https://snomed.atlassian.net/browse/IHTSDO-681"
     },
@@ -1037,7 +1037,7 @@
       "key": "IHTSDO-130",
       "summary": "artf227292-Overlap/duplication in fetal position/presentation/lie <finding> and <disorder> content",
       "status": "Accepted",
-      "assignee": "Maria Braithwaite",
+      "assignee": "User f1a81",
       "priority": "Trivial / Lowest",
       "url": "https://snomed.atlassian.net/browse/IHTSDO-130"
     },
@@ -1045,7 +1045,7 @@
       "key": "IHTSDO-129",
       "summary": "artf227320-Female \"Sterilization\" Procedures",
       "status": "Accepted",
-      "assignee": "Victor Medina",
+      "assignee": "User 21651",
       "priority": "Blocker / Highest",
       "url": "https://snomed.atlassian.net/browse/IHTSDO-129"
     },
@@ -1053,7 +1053,7 @@
       "key": "IHTSDO-884",
       "summary": "artf222835-Review Use of the word \"current\"",
       "status": "Accepted",
-      "assignee": "Jim Case",
+      "assignee": "User 4159e",
       "priority": "Critical / High",
       "url": "https://snomed.atlassian.net/browse/IHTSDO-884"
     },
@@ -1069,7 +1069,7 @@
       "key": "IHTSDO-862",
       "summary": "artf222817-Review concepts: Serology",
       "status": "In Inception",
-      "assignee": "Suzanne Santamaria",
+      "assignee": "User fb04d",
       "priority": "Blocker / Highest",
       "url": "https://snomed.atlassian.net/browse/IHTSDO-862"
     },
@@ -1077,7 +1077,7 @@
       "key": "IHTSDO-836",
       "summary": "artf222785-Concept model: Presence",
       "status": "In Construction Review",
-      "assignee": "Jim Case",
+      "assignee": "User 4159e",
       "priority": "Critical / High",
       "url": "https://snomed.atlassian.net/browse/IHTSDO-836"
     },
@@ -1093,7 +1093,7 @@
       "key": "IHTSDO-645",
       "summary": "artf222813-Retired concepts without Semantic Tags",
       "status": "Accepted",
-      "assignee": "Maria Braithwaite",
+      "assignee": "User f1a81",
       "priority": "Trivial / Lowest",
       "url": "https://snomed.atlassian.net/browse/IHTSDO-645"
     },
@@ -1101,7 +1101,7 @@
       "key": "IHTSDO-314",
       "summary": "artf222786-Concept model: Presence of X (situation) - presence of X (finding)",
       "status": "In Elaboration",
-      "assignee": "Jim Case",
+      "assignee": "User 4159e",
       "priority": "Critical / High",
       "url": "https://snomed.atlassian.net/browse/IHTSDO-314"
     },
@@ -1117,7 +1117,7 @@
       "key": "IHTSDO-574",
       "summary": "artf222519-Change PT: Eruption of skin",
       "status": "In Fast Track",
-      "assignee": "Maria Braithwaite",
+      "assignee": "User f1a81",
       "priority": "Minor / Low",
       "url": "https://snomed.atlassian.net/browse/IHTSDO-574"
     },
@@ -1125,7 +1125,7 @@
       "key": "IHTSDO-404",
       "summary": "Review of Clinical finding concepts relating prematurity of infants",
       "status": "Reopened",
-      "assignee": "Elaine Wooler",
+      "assignee": "User db909",
       "priority": "Trivial / Lowest",
       "url": "https://snomed.atlassian.net/browse/IHTSDO-404"
     },
@@ -1133,7 +1133,7 @@
       "key": "IHTSDO-359",
       "summary": "artf222526-Rework hierarchy: Keratosis",
       "status": "Accepted",
-      "assignee": "Cathy Richardson",
+      "assignee": "User 2a710",
       "priority": "Minor / Low",
       "url": "https://snomed.atlassian.net/browse/IHTSDO-359"
     },
@@ -1149,7 +1149,7 @@
       "key": "IHTSDO-293",
       "summary": "artf222464-Concepts not fully modeled: Severity (severe, mild, moderate)",
       "status": "In Elaboration",
-      "assignee": "Jim Case",
+      "assignee": "User 4159e",
       "priority": "Trivial / Lowest",
       "url": "https://snomed.atlassian.net/browse/IHTSDO-293"
     },
@@ -1157,7 +1157,7 @@
       "key": "IHTSDO-231",
       "summary": "artf222557-Rework hierarchy: Catheterization",
       "status": "In Construction Review",
-      "assignee": "Victor Medina",
+      "assignee": "User 21651",
       "priority": "Trivial / Lowest",
       "url": "https://snomed.atlassian.net/browse/IHTSDO-231"
     },
@@ -1165,7 +1165,7 @@
       "key": "IHTSDO-414",
       "summary": "artf225253-Diabetes - comprehensive support of terminology requirements",
       "status": "In Inception",
-      "assignee": "Cathy Richardson",
+      "assignee": "User 2a710",
       "priority": "Critical / High",
       "url": "https://snomed.atlassian.net/browse/IHTSDO-414"
     },
@@ -1173,7 +1173,7 @@
       "key": "IHTSDO-696",
       "summary": "artf6295-Counseling (procedure) and Education (procedure)",
       "status": "Reopened",
-      "assignee": "Cathy Richardson",
+      "assignee": "User 2a710",
       "priority": "Blocker / Highest",
       "url": "https://snomed.atlassian.net/browse/IHTSDO-696"
     },
@@ -1181,7 +1181,7 @@
       "key": "IHTSDO-400",
       "summary": "artf6292-psychiatry and mental health terminology review and update",
       "status": "Reopened",
-      "assignee": "Elaine Wooler",
+      "assignee": "User db909",
       "priority": "Critical / High",
       "url": "https://snomed.atlassian.net/browse/IHTSDO-400"
     },
@@ -1189,7 +1189,7 @@
       "key": "IHTSDO-165",
       "summary": "artf6315-Deficiency of x",
       "status": "On Hold",
-      "assignee": "Jim Case",
+      "assignee": "User 4159e",
       "priority": "Blocker / Highest",
       "url": "https://snomed.atlassian.net/browse/IHTSDO-165"
     },
@@ -1197,7 +1197,7 @@
       "key": "IHTSDO-775",
       "summary": "Administrative statuses",
       "status": "On Hold",
-      "assignee": "Cathy Richardson",
+      "assignee": "User 2a710",
       "priority": "Blocker / Highest",
       "url": "https://snomed.atlassian.net/browse/IHTSDO-775"
     }
