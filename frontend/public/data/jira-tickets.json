@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-23T14:35:27.314Z",
+  "lastUpdated": "2026-06-23T17:13:08.918Z",
   "tickets": {
     "IHTSDO-1287": {
       "key": "IHTSDO-1287",
@@ -429,7 +429,7 @@
       "key": "IHTSDO-844",
       "summary": "artf6314-Immunization and vaccination",
       "status": "In Elaboration",
-      "assignee": "Karen Rees",
+      "assignee": "Farzaneh Ashrafi",
       "priority": "Blocker / Highest",
       "url": "https://snomed.atlassian.net/browse/IHTSDO-844"
     },
