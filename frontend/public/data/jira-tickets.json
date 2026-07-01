@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-01T16:03:14.466Z",
+  "lastUpdated": "2026-07-01T18:22:52.478Z",
   "tickets": {
     "IHTSDO-1287": {
       "key": "IHTSDO-1287",
@@ -1068,7 +1068,7 @@
     "IHTSDO-862": {
       "key": "IHTSDO-862",
       "summary": "artf222817-Review concepts: Serology",
-      "status": "In Inception",
+      "status": "In Construction",
       "assignee": "Suzanne Santamaria",
       "priority": "Blocker / Highest",
       "url": "https://snomed.atlassian.net/browse/IHTSDO-862"
