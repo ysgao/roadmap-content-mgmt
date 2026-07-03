@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-03T06:07:46.176Z",
+  "lastUpdated": "2026-07-03T09:41:01.712Z",
   "tickets": {
     "IHTSDO-1287": {
       "key": "IHTSDO-1287",
@@ -1124,7 +1124,7 @@
     "IHTSDO-404": {
       "key": "IHTSDO-404",
       "summary": "Review of Clinical finding concepts relating prematurity of infants",
-      "status": "Reopened",
+      "status": "Closed",
       "assignee": "Elaine Wooler",
       "priority": "Trivial / Lowest",
       "url": "https://snomed.atlassian.net/browse/IHTSDO-404"
