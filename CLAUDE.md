@@ -17,6 +17,12 @@ SNOMED International Roadmap CMS — single-file HTML app (`standalone.html`) th
 
 ---
 
+## standalone.html — Deployment Note
+
+`standalone.html` lives in the **repo root** and is published to GitHub Pages at `{pages-url}/standalone.html`. The deploy workflow (`deploy.yml`) copies it into `frontend/dist/` after the Vite build before uploading the Pages artifact. It contains links to internal IHTSDO Jira tickets (snomed.atlassian.net) — external users can see the page but the Jira links will require Atlassian login.
+
+---
+
 ## standalone.html Architecture
 
 ### Data flow

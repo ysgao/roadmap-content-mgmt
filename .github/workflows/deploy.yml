@@ -37,6 +37,9 @@ jobs:
           VITE_GOOGLE_SHEETS_ID: ${{ vars.VITE_GOOGLE_SHEETS_ID }}
         run: npm run build
 
+      - name: Include standalone.html in Pages artifact
+        run: cp standalone.html frontend/dist/standalone.html
+
       - uses: actions/upload-pages-artifact@v3
         with:
           path: frontend/dist
