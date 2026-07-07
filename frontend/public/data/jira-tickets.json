@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-06T23:01:13.740Z",
+  "lastUpdated": "2026-07-07T01:15:02.585Z",
   "tickets": {
     "IHTSDO-1287": {
       "key": "IHTSDO-1287",
@@ -491,11 +491,12 @@
     },
     "IHTSDO-1244": {
       "key": "IHTSDO-1244",
-      "summary": "Findings hierarchy - inconsistent word order and synonym/FSN matches; disability vs impairment; reduced, limited vs. limitation; ",
-      "status": "In Inception",
-      "assignee": "Sarah Lukha",
-      "priority": "Major / Medium",
-      "url": "https://snomed.atlassian.net/browse/IHTSDO-1244"
+      "summary": "",
+      "status": "",
+      "assignee": null,
+      "priority": null,
+      "url": "https://snomed.atlassian.net/browse/IHTSDO-1244",
+      "error": "HTTP 429"
     },
     "IHTSDO-904": {
       "key": "IHTSDO-904",
@@ -531,11 +532,12 @@
     },
     "IHTSDO-871": {
       "key": "IHTSDO-871",
-      "summary": "artf227026-Ischemia and subtypes",
-      "status": "Reopened",
+      "summary": "",
+      "status": "",
       "assignee": null,
-      "priority": "Minor / Low",
-      "url": "https://snomed.atlassian.net/browse/IHTSDO-871"
+      "priority": null,
+      "url": "https://snomed.atlassian.net/browse/IHTSDO-871",
+      "error": "HTTP 429"
     },
     "IHTSDO-939": {
       "key": "IHTSDO-939",
@@ -555,11 +557,12 @@
     },
     "IHTSDO-731": {
       "key": "IHTSDO-731",
-      "summary": "Unexpected classification: embolism is a soft tissue disorder",
-      "status": "In Elaboration",
-      "assignee": "Yongsheng Gao",
-      "priority": "Minor / Low",
-      "url": "https://snomed.atlassian.net/browse/IHTSDO-731"
+      "summary": "",
+      "status": "",
+      "assignee": null,
+      "priority": null,
+      "url": "https://snomed.atlassian.net/browse/IHTSDO-731",
+      "error": "HTTP 429"
     },
     "IHTSDO-924": {
       "key": "IHTSDO-924",
@@ -643,11 +646,12 @@
     },
     "IHTSDO-1277": {
       "key": "IHTSDO-1277",
-      "summary": "Personal care vs self care",
-      "status": "In Fast Track",
-      "assignee": "Cathy Richardson",
-      "priority": "Major / Medium",
-      "url": "https://snomed.atlassian.net/browse/IHTSDO-1277"
+      "summary": "",
+      "status": "",
+      "assignee": null,
+      "priority": null,
+      "url": "https://snomed.atlassian.net/browse/IHTSDO-1277",
+      "error": "HTTP 429"
     },
     "IHTSDO-1275": {
       "key": "IHTSDO-1275",
@@ -715,11 +719,12 @@
     },
     "IHTSDO-1228": {
       "key": "IHTSDO-1228",
-      "summary": "Closed injury and associated morphology closed wound",
-      "status": "Accepted",
+      "summary": "",
+      "status": "",
       "assignee": null,
-      "priority": "Major / Medium",
-      "url": "https://snomed.atlassian.net/browse/IHTSDO-1228"
+      "priority": null,
+      "url": "https://snomed.atlassian.net/browse/IHTSDO-1228",
+      "error": "HTTP 429"
     },
     "IHTSDO-1224": {
       "key": "IHTSDO-1224",
@@ -787,11 +792,12 @@
     },
     "IHTSDO-1130": {
       "key": "IHTSDO-1130",
-      "summary": "Clinical review of << Chronic obstructive lung disease (disorder)",
-      "status": "Accepted",
+      "summary": "",
+      "status": "",
       "assignee": null,
-      "priority": "Major / Medium",
-      "url": "https://snomed.atlassian.net/browse/IHTSDO-1130"
+      "priority": null,
+      "url": "https://snomed.atlassian.net/browse/IHTSDO-1130",
+      "error": "HTTP 429"
     },
     "IHTSDO-1122": {
       "key": "IHTSDO-1122",
@@ -803,27 +809,30 @@
     },
     "IHTSDO-1118": {
       "key": "IHTSDO-1118",
-      "summary": "405944004 Asthmatic bronchitis (disorder) and 195949008 | Chronic asthmatic bronchitis (disorder):patients who don't have a diagnosis of asthma being referred to asthma disease registers",
-      "status": "Accepted",
+      "summary": "",
+      "status": "",
       "assignee": null,
-      "priority": "Major / Medium",
-      "url": "https://snomed.atlassian.net/browse/IHTSDO-1118"
+      "priority": null,
+      "url": "https://snomed.atlassian.net/browse/IHTSDO-1118",
+      "error": "HTTP 429"
     },
     "IHTSDO-1109": {
       "key": "IHTSDO-1109",
-      "summary": "Eponymous terms which should be inactivated.",
-      "status": "Accepted",
-      "assignee": "Monica Harry",
-      "priority": "Major / Medium",
-      "url": "https://snomed.atlassian.net/browse/IHTSDO-1109"
+      "summary": "",
+      "status": "",
+      "assignee": null,
+      "priority": null,
+      "url": "https://snomed.atlassian.net/browse/IHTSDO-1109",
+      "error": "HTTP 429"
     },
     "IHTSDO-1100": {
       "key": "IHTSDO-1100",
-      "summary": "Clarification of 38109001 |Osseous metaplasia (morphologic abnormality)| ",
-      "status": "Accepted",
-      "assignee": "Elaine Wooler",
-      "priority": "Major / Medium",
-      "url": "https://snomed.atlassian.net/browse/IHTSDO-1100"
+      "summary": "",
+      "status": "",
+      "assignee": null,
+      "priority": null,
+      "url": "https://snomed.atlassian.net/browse/IHTSDO-1100",
+      "error": "HTTP 429"
     },
     "IHTSDO-1086": {
       "key": "IHTSDO-1086",
@@ -835,19 +844,21 @@
     },
     "IHTSDO-1075": {
       "key": "IHTSDO-1075",
-      "summary": "chemosurgery vs chemodestruction- different or duplicates",
-      "status": "Accepted",
+      "summary": "",
+      "status": "",
       "assignee": null,
-      "priority": "Major / Medium",
-      "url": "https://snomed.atlassian.net/browse/IHTSDO-1075"
+      "priority": null,
+      "url": "https://snomed.atlassian.net/browse/IHTSDO-1075",
+      "error": "HTTP 429"
     },
     "IHTSDO-1062": {
       "key": "IHTSDO-1062",
-      "summary": "Inconsistent finding site of ulcers",
-      "status": "In Construction",
-      "assignee": "Monica Harry",
-      "priority": "Major / Medium",
-      "url": "https://snomed.atlassian.net/browse/IHTSDO-1062"
+      "summary": "",
+      "status": "",
+      "assignee": null,
+      "priority": null,
+      "url": "https://snomed.atlassian.net/browse/IHTSDO-1062",
+      "error": "HTTP 429"
     },
     "IHTSDO-1056": {
       "key": "IHTSDO-1056",
@@ -867,75 +878,84 @@
     },
     "IHTSDO-1294": {
       "key": "IHTSDO-1294",
-      "summary": "Boil and abscess- Duplication of content",
-      "status": "In Fast Track",
-      "assignee": "Cathy Richardson",
-      "priority": "Major / Medium",
-      "url": "https://snomed.atlassian.net/browse/IHTSDO-1294"
+      "summary": "",
+      "status": "",
+      "assignee": null,
+      "priority": null,
+      "url": "https://snomed.atlassian.net/browse/IHTSDO-1294",
+      "error": "HTTP 429"
     },
     "IHTSDO-1033": {
       "key": "IHTSDO-1033",
-      "summary": "Meaning of X level: management of existing content",
-      "status": "Accepted",
-      "assignee": "Jim Case",
-      "priority": "Trivial / Lowest",
-      "url": "https://snomed.atlassian.net/browse/IHTSDO-1033"
+      "summary": "",
+      "status": "",
+      "assignee": null,
+      "priority": null,
+      "url": "https://snomed.atlassian.net/browse/IHTSDO-1033",
+      "error": "HTTP 429"
     },
     "IHTSDO-1019": {
       "key": "IHTSDO-1019",
-      "summary": "Physical object - joint prosthesis/implant hierarchies",
-      "status": "Accepted",
+      "summary": "",
+      "status": "",
       "assignee": null,
-      "priority": "Minor / Low",
-      "url": "https://snomed.atlassian.net/browse/IHTSDO-1019"
+      "priority": null,
+      "url": "https://snomed.atlassian.net/browse/IHTSDO-1019",
+      "error": "HTTP 429"
     },
     "IHTSDO-1016": {
       "key": "IHTSDO-1016",
-      "summary": "<x>  with antenatal/postnatal problem/complication, <x> - delivered with postnatal problem/complication, delivered/not delivered",
-      "status": "In Construction",
-      "assignee": "Jim Case",
-      "priority": "Major / Medium",
-      "url": "https://snomed.atlassian.net/browse/IHTSDO-1016"
+      "summary": "",
+      "status": "",
+      "assignee": null,
+      "priority": null,
+      "url": "https://snomed.atlassian.net/browse/IHTSDO-1016",
+      "error": "HTTP 429"
     },
     "IHTSDO-1153": {
       "key": "IHTSDO-1153",
-      "summary": "Conflicting terms in the Findings hierarchy related to neonatal terms ",
-      "status": "Accepted",
-      "assignee": "Suzanne Santamaria",
-      "priority": "Major / Medium",
-      "url": "https://snomed.atlassian.net/browse/IHTSDO-1153"
+      "summary": "",
+      "status": "",
+      "assignee": null,
+      "priority": null,
+      "url": "https://snomed.atlassian.net/browse/IHTSDO-1153",
+      "error": "HTTP 429"
     },
     "IHTSDO-1011": {
       "key": "IHTSDO-1011",
-      "summary": "Multiple issues with 10692681000119108 |Disorder of respiratory system exacerbated by aspirin (disorder)|",
-      "status": "Accepted",
-      "assignee": "Jim Case",
-      "priority": "Minor / Low",
-      "url": "https://snomed.atlassian.net/browse/IHTSDO-1011"
+      "summary": "",
+      "status": "",
+      "assignee": null,
+      "priority": null,
+      "url": "https://snomed.atlassian.net/browse/IHTSDO-1011",
+      "error": "HTTP 429"
     },
     "IHTSDO-1008": {
       "key": "IHTSDO-1008",
-      "summary": "Non metabolic complications of diabetes being subsumed by Abnormal metabolic state in diabetes mellitus (disorder)",
-      "status": "In Fast Track",
-      "assignee": "Cathy Richardson",
-      "priority": "Critical / High",
-      "url": "https://snomed.atlassian.net/browse/IHTSDO-1008"
+      "summary": "",
+      "status": "",
+      "assignee": null,
+      "priority": null,
+      "url": "https://snomed.atlassian.net/browse/IHTSDO-1008",
+      "error": "HTTP 429"
     },
     "IHTSDO-990": {
       "key": "IHTSDO-990",
-      "summary": "Clarification of the difference between entrapment and compression",
-      "status": "Accepted",
-      "assignee": "Victor Medina",
-      "priority": "Minor / Low",
-      "url": "https://snomed.atlassian.net/browse/IHTSDO-990"
+      "summary": "",
+      "status": "",
+      "assignee": null,
+      "priority": null,
+      "url": "https://snomed.atlassian.net/browse/IHTSDO-990",
+      "error": "HTTP 429"
     },
     "IHTSDO-989": {
       "key": "IHTSDO-989",
-      "summary": "Modeling of blood specimen concepts",
-      "status": "On Hold",
-      "assignee": "Suzanne Santamaria",
-      "priority": "Blocker / Highest",
-      "url": "https://snomed.atlassian.net/browse/IHTSDO-989"
+      "summary": "",
+      "status": "",
+      "assignee": null,
+      "priority": null,
+      "url": "https://snomed.atlassian.net/browse/IHTSDO-989",
+      "error": "HTTP 429"
     },
     "IHTSDO-984": {
       "key": "IHTSDO-984",
@@ -955,251 +975,282 @@
     },
     "IHTSDO-976": {
       "key": "IHTSDO-976",
-      "summary": "Localised diseases",
-      "status": "Accepted",
+      "summary": "",
+      "status": "",
       "assignee": null,
-      "priority": "Trivial / Lowest",
-      "url": "https://snomed.atlassian.net/browse/IHTSDO-976"
+      "priority": null,
+      "url": "https://snomed.atlassian.net/browse/IHTSDO-976",
+      "error": "HTTP 429"
     },
     "IHTSDO-975": {
       "key": "IHTSDO-975",
-      "summary": "Review: Administration & Management procedures",
-      "status": "Accepted",
+      "summary": "",
+      "status": "",
       "assignee": null,
-      "priority": "Major / Medium",
-      "url": "https://snomed.atlassian.net/browse/IHTSDO-975"
+      "priority": null,
+      "url": "https://snomed.atlassian.net/browse/IHTSDO-975",
+      "error": "HTTP 429"
     },
     "IHTSDO-969": {
       "key": "IHTSDO-969",
-      "summary": "Findings of \"Referred to X\" vs. Procedures of \"Referral to X\" ",
-      "status": "Accepted",
-      "assignee": "Monica Harry",
-      "priority": "Major / Medium",
-      "url": "https://snomed.atlassian.net/browse/IHTSDO-969"
+      "summary": "",
+      "status": "",
+      "assignee": null,
+      "priority": null,
+      "url": "https://snomed.atlassian.net/browse/IHTSDO-969",
+      "error": "HTTP 429"
     },
     "IHTSDO-64": {
       "key": "IHTSDO-64",
-      "summary": "artf233925-Herniated vs. prolapsed disc: Review hierarchy 73589001|Intervertebral disc prolapse (disorder)",
-      "status": "Accepted",
-      "assignee": "Jim Case",
-      "priority": "Trivial / Lowest",
-      "url": "https://snomed.atlassian.net/browse/IHTSDO-64"
+      "summary": "",
+      "status": "",
+      "assignee": null,
+      "priority": null,
+      "url": "https://snomed.atlassian.net/browse/IHTSDO-64",
+      "error": "HTTP 429"
     },
     "IHTSDO-1142": {
       "key": "IHTSDO-1142",
-      "summary": "artf233786-Alignment of Existing Content to \"X with Y\" and \"X due to Y\" patterns from \"X associated with Y\"",
-      "status": "On Hold",
-      "assignee": "Michael Harwood-Jones",
-      "priority": "Minor / Low",
-      "url": "https://snomed.atlassian.net/browse/IHTSDO-1142"
+      "summary": "",
+      "status": "",
+      "assignee": null,
+      "priority": null,
+      "url": "https://snomed.atlassian.net/browse/IHTSDO-1142",
+      "error": "HTTP 429"
     },
     "IHTSDO-408": {
       "key": "IHTSDO-408",
-      "summary": "artf235613-Death caused by event",
-      "status": "Accepted",
+      "summary": "",
+      "status": "",
       "assignee": null,
-      "priority": "Major / Medium",
-      "url": "https://snomed.atlassian.net/browse/IHTSDO-408"
+      "priority": null,
+      "url": "https://snomed.atlassian.net/browse/IHTSDO-408",
+      "error": "HTTP 429"
     },
     "IHTSDO-848": {
       "key": "IHTSDO-848",
-      "summary": "artf234561-Modelling of foreign body concepts",
-      "status": "Accepted",
+      "summary": "",
+      "status": "",
       "assignee": null,
-      "priority": "Trivial / Lowest",
-      "url": "https://snomed.atlassian.net/browse/IHTSDO-848"
+      "priority": null,
+      "url": "https://snomed.atlassian.net/browse/IHTSDO-848",
+      "error": "HTTP 429"
     },
     "IHTSDO-107": {
       "key": "IHTSDO-107",
-      "summary": "artf229247-Review hierarchy: Spondylolisthesis (disorder)",
-      "status": "Accepted",
+      "summary": "",
+      "status": "",
       "assignee": null,
-      "priority": "Minor / Low",
-      "url": "https://snomed.atlassian.net/browse/IHTSDO-107"
+      "priority": null,
+      "url": "https://snomed.atlassian.net/browse/IHTSDO-107",
+      "error": "HTTP 429"
     },
     "IHTSDO-681": {
       "key": "IHTSDO-681",
-      "summary": "artf227282-Hernia procedures and disorders",
-      "status": "Accepted",
-      "assignee": "Victor Medina",
-      "priority": "Major / Medium",
-      "url": "https://snomed.atlassian.net/browse/IHTSDO-681"
+      "summary": "",
+      "status": "",
+      "assignee": null,
+      "priority": null,
+      "url": "https://snomed.atlassian.net/browse/IHTSDO-681",
+      "error": "HTTP 429"
     },
     "IHTSDO-265": {
       "key": "IHTSDO-265",
-      "summary": "artf227361-Temporary/permanent <procedures>, Introduction of temporary/permanent <device>",
-      "status": "Accepted",
+      "summary": "",
+      "status": "",
       "assignee": null,
-      "priority": "Minor / Low",
-      "url": "https://snomed.atlassian.net/browse/IHTSDO-265"
+      "priority": null,
+      "url": "https://snomed.atlassian.net/browse/IHTSDO-265",
+      "error": "HTTP 429"
     },
     "IHTSDO-130": {
       "key": "IHTSDO-130",
-      "summary": "artf227292-Overlap/duplication in fetal position/presentation/lie <finding> and <disorder> content",
-      "status": "In Elaboration",
-      "assignee": "Maria Braithwaite",
-      "priority": "Trivial / Lowest",
-      "url": "https://snomed.atlassian.net/browse/IHTSDO-130"
+      "summary": "",
+      "status": "",
+      "assignee": null,
+      "priority": null,
+      "url": "https://snomed.atlassian.net/browse/IHTSDO-130",
+      "error": "HTTP 429"
     },
     "IHTSDO-129": {
       "key": "IHTSDO-129",
-      "summary": "artf227320-Female \"Sterilization\" Procedures",
-      "status": "Accepted",
-      "assignee": "Victor Medina",
-      "priority": "Blocker / Highest",
-      "url": "https://snomed.atlassian.net/browse/IHTSDO-129"
+      "summary": "",
+      "status": "",
+      "assignee": null,
+      "priority": null,
+      "url": "https://snomed.atlassian.net/browse/IHTSDO-129",
+      "error": "HTTP 429"
     },
     "IHTSDO-884": {
       "key": "IHTSDO-884",
-      "summary": "artf222835-Review Use of the word \"current\"",
-      "status": "Accepted",
-      "assignee": "Jim Case",
-      "priority": "Critical / High",
-      "url": "https://snomed.atlassian.net/browse/IHTSDO-884"
+      "summary": "",
+      "status": "",
+      "assignee": null,
+      "priority": null,
+      "url": "https://snomed.atlassian.net/browse/IHTSDO-884",
+      "error": "HTTP 429"
     },
     "IHTSDO-261": {
       "key": "IHTSDO-261",
-      "summary": "artf222838-Concept model: \"X presence known absent\" or \"X absence known present\"",
-      "status": "Accepted",
+      "summary": "",
+      "status": "",
       "assignee": null,
-      "priority": "Critical / High",
-      "url": "https://snomed.atlassian.net/browse/IHTSDO-261"
+      "priority": null,
+      "url": "https://snomed.atlassian.net/browse/IHTSDO-261",
+      "error": "HTTP 429"
     },
     "IHTSDO-862": {
       "key": "IHTSDO-862",
-      "summary": "artf222817-Review concepts: Serology",
-      "status": "In Construction",
-      "assignee": "Suzanne Santamaria",
-      "priority": "Blocker / Highest",
-      "url": "https://snomed.atlassian.net/browse/IHTSDO-862"
+      "summary": "",
+      "status": "",
+      "assignee": null,
+      "priority": null,
+      "url": "https://snomed.atlassian.net/browse/IHTSDO-862",
+      "error": "HTTP 429"
     },
     "IHTSDO-836": {
       "key": "IHTSDO-836",
-      "summary": "artf222785-Concept model: Presence",
-      "status": "In Construction Review",
-      "assignee": "Jim Case",
-      "priority": "Critical / High",
-      "url": "https://snomed.atlassian.net/browse/IHTSDO-836"
+      "summary": "",
+      "status": "",
+      "assignee": null,
+      "priority": null,
+      "url": "https://snomed.atlassian.net/browse/IHTSDO-836",
+      "error": "HTTP 429"
     },
     "IHTSDO-834": {
       "key": "IHTSDO-834",
-      "summary": "artf222799-Add concept: Regional lymphadenopathy",
-      "status": "On Hold",
+      "summary": "",
+      "status": "",
       "assignee": null,
-      "priority": "Minor / Low",
-      "url": "https://snomed.atlassian.net/browse/IHTSDO-834"
+      "priority": null,
+      "url": "https://snomed.atlassian.net/browse/IHTSDO-834",
+      "error": "HTTP 429"
     },
     "IHTSDO-645": {
       "key": "IHTSDO-645",
-      "summary": "artf222813-Retired concepts without Semantic Tags",
-      "status": "Accepted",
-      "assignee": "Maria Braithwaite",
-      "priority": "Trivial / Lowest",
-      "url": "https://snomed.atlassian.net/browse/IHTSDO-645"
+      "summary": "",
+      "status": "",
+      "assignee": null,
+      "priority": null,
+      "url": "https://snomed.atlassian.net/browse/IHTSDO-645",
+      "error": "HTTP 429"
     },
     "IHTSDO-314": {
       "key": "IHTSDO-314",
-      "summary": "artf222786-Concept model: Presence of X (situation) - presence of X (finding)",
-      "status": "In Elaboration",
-      "assignee": "Jim Case",
-      "priority": "Critical / High",
-      "url": "https://snomed.atlassian.net/browse/IHTSDO-314"
+      "summary": "",
+      "status": "",
+      "assignee": null,
+      "priority": null,
+      "url": "https://snomed.atlassian.net/browse/IHTSDO-314",
+      "error": "HTTP 429"
     },
     "IHTSDO-505": {
       "key": "IHTSDO-505",
-      "summary": "artf222714-Concept hierarchy: Hemophilia",
-      "status": "On Hold",
+      "summary": "",
+      "status": "",
       "assignee": null,
-      "priority": "Trivial / Lowest",
-      "url": "https://snomed.atlassian.net/browse/IHTSDO-505"
+      "priority": null,
+      "url": "https://snomed.atlassian.net/browse/IHTSDO-505",
+      "error": "HTTP 429"
     },
     "IHTSDO-574": {
       "key": "IHTSDO-574",
-      "summary": "artf222519-Change PT: Eruption of skin",
-      "status": "In Fast Track",
-      "assignee": "Maria Braithwaite",
-      "priority": "Minor / Low",
-      "url": "https://snomed.atlassian.net/browse/IHTSDO-574"
+      "summary": "",
+      "status": "",
+      "assignee": null,
+      "priority": null,
+      "url": "https://snomed.atlassian.net/browse/IHTSDO-574",
+      "error": "HTTP 429"
     },
     "IHTSDO-404": {
       "key": "IHTSDO-404",
-      "summary": "Review of Clinical finding concepts relating prematurity of infants",
-      "status": "Closed",
-      "assignee": "Elaine Wooler",
-      "priority": "Trivial / Lowest",
-      "url": "https://snomed.atlassian.net/browse/IHTSDO-404"
+      "summary": "",
+      "status": "",
+      "assignee": null,
+      "priority": null,
+      "url": "https://snomed.atlassian.net/browse/IHTSDO-404",
+      "error": "HTTP 429"
     },
     "IHTSDO-359": {
       "key": "IHTSDO-359",
-      "summary": "artf222526-Rework hierarchy: Keratosis",
-      "status": "Accepted",
-      "assignee": "Cathy Richardson",
-      "priority": "Minor / Low",
-      "url": "https://snomed.atlassian.net/browse/IHTSDO-359"
+      "summary": "",
+      "status": "",
+      "assignee": null,
+      "priority": null,
+      "url": "https://snomed.atlassian.net/browse/IHTSDO-359",
+      "error": "HTTP 429"
     },
     "IHTSDO-335": {
       "key": "IHTSDO-335",
-      "summary": "artf222556-Rework hierarchy: Hypothyroidism",
-      "status": "On Hold",
+      "summary": "",
+      "status": "",
       "assignee": null,
-      "priority": "Trivial / Lowest",
-      "url": "https://snomed.atlassian.net/browse/IHTSDO-335"
+      "priority": null,
+      "url": "https://snomed.atlassian.net/browse/IHTSDO-335",
+      "error": "HTTP 429"
     },
     "IHTSDO-293": {
       "key": "IHTSDO-293",
-      "summary": "artf222464-Concepts not fully modeled: Severity (severe, mild, moderate)",
-      "status": "In Elaboration",
-      "assignee": "Jim Case",
-      "priority": "Trivial / Lowest",
-      "url": "https://snomed.atlassian.net/browse/IHTSDO-293"
+      "summary": "",
+      "status": "",
+      "assignee": null,
+      "priority": null,
+      "url": "https://snomed.atlassian.net/browse/IHTSDO-293",
+      "error": "HTTP 429"
     },
     "IHTSDO-231": {
       "key": "IHTSDO-231",
-      "summary": "artf222557-Rework hierarchy: Catheterization",
-      "status": "In Construction Review",
-      "assignee": "Victor Medina",
-      "priority": "Trivial / Lowest",
-      "url": "https://snomed.atlassian.net/browse/IHTSDO-231"
+      "summary": "",
+      "status": "",
+      "assignee": null,
+      "priority": null,
+      "url": "https://snomed.atlassian.net/browse/IHTSDO-231",
+      "error": "HTTP 429"
     },
     "IHTSDO-414": {
       "key": "IHTSDO-414",
-      "summary": "artf225253-Diabetes - comprehensive support of terminology requirements",
-      "status": "In Inception",
-      "assignee": "Cathy Richardson",
-      "priority": "Critical / High",
-      "url": "https://snomed.atlassian.net/browse/IHTSDO-414"
+      "summary": "",
+      "status": "",
+      "assignee": null,
+      "priority": null,
+      "url": "https://snomed.atlassian.net/browse/IHTSDO-414",
+      "error": "HTTP 429"
     },
     "IHTSDO-696": {
       "key": "IHTSDO-696",
-      "summary": "artf6295-Counseling (procedure) and Education (procedure)",
-      "status": "Reopened",
-      "assignee": "Cathy Richardson",
-      "priority": "Blocker / Highest",
-      "url": "https://snomed.atlassian.net/browse/IHTSDO-696"
+      "summary": "",
+      "status": "",
+      "assignee": null,
+      "priority": null,
+      "url": "https://snomed.atlassian.net/browse/IHTSDO-696",
+      "error": "HTTP 429"
     },
     "IHTSDO-400": {
       "key": "IHTSDO-400",
-      "summary": "artf6292-psychiatry and mental health terminology review and update",
-      "status": "In Combined Inception & Elaboration",
-      "assignee": "Elaine Wooler",
-      "priority": "Critical / High",
-      "url": "https://snomed.atlassian.net/browse/IHTSDO-400"
+      "summary": "",
+      "status": "",
+      "assignee": null,
+      "priority": null,
+      "url": "https://snomed.atlassian.net/browse/IHTSDO-400",
+      "error": "HTTP 429"
     },
     "IHTSDO-165": {
       "key": "IHTSDO-165",
-      "summary": "artf6315-Deficiency of x",
-      "status": "On Hold",
-      "assignee": "Jim Case",
-      "priority": "Blocker / Highest",
-      "url": "https://snomed.atlassian.net/browse/IHTSDO-165"
+      "summary": "",
+      "status": "",
+      "assignee": null,
+      "priority": null,
+      "url": "https://snomed.atlassian.net/browse/IHTSDO-165",
+      "error": "HTTP 429"
     },
     "IHTSDO-775": {
       "key": "IHTSDO-775",
-      "summary": "Administrative statuses",
-      "status": "On Hold",
-      "assignee": "Cathy Richardson",
-      "priority": "Blocker / Highest",
-      "url": "https://snomed.atlassian.net/browse/IHTSDO-775"
+      "summary": "",
+      "status": "",
+      "assignee": null,
+      "priority": null,
+      "url": "https://snomed.atlassian.net/browse/IHTSDO-775",
+      "error": "HTTP 429"
     }
   }
 }
